@@ -50,7 +50,7 @@ export default function Services() {
   };
   return (
     <section id="services" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-4">
@@ -117,7 +117,7 @@ export default function Services() {
           </p>
           <Button 
             size="lg" 
-            className="text-lg px-8"
+            className="text-base md:text-lg px-4 md:px-8"
             data-testid="button-services-quote"
             onClick={scrollToContact}
           >

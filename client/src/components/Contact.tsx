@@ -141,7 +141,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-4">
@@ -153,7 +153,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
           {/* Contact Form */}
           <Card>
             <CardHeader>
@@ -308,13 +308,13 @@ export default function Contact() {
                       {item.link ? (
                         <a 
                           href={item.link}
-                          className="text-muted-foreground hover:text-primary transition-colors"
+                          className="text-muted-foreground hover:text-primary transition-colors break-all sm:break-normal"
                           data-testid={`link-${item.id}`}
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <div className="text-muted-foreground">
+                        <div className="text-muted-foreground break-all sm:break-normal">
                           {item.value}
                         </div>
                       )}

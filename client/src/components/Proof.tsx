@@ -32,7 +32,7 @@ const testimonial = {
 export default function Proof() {
   return (
     <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-4">

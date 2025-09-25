@@ -1,0 +1,180 @@
+# 🚀 Master Prompt — Replit Agent 3
+Project: Build a production-ready, award-level marketing website for
+Donnachy Electrical – Solar & Battery Specialists (Tasmania, Australia)
+
+---
+
+🎯 Goal
+Design and develop a fast, accessible, SEO-optimised React website that positions Donnachy Electrical as a trusted, CEC-accredited solar & battery installer. The site should drive visitors to request a free quote while projecting reliability, friendliness, and professionalism.
+
+---
+
+🖌 Brand Identity
+- Trading Name (customer-facing): Donnachy Electrical – Solar & Battery Specialists
+- Registered Business Name: Donnachy Electrical Pty Ltd
+- ABN: 91 639 014 850
+- Tagline: “Reliable Solar & Battery Solutions Across Tasmania.”
+- Colours:
+  - Primary: Black (#000000) & White (#FFFFFF)
+  - Accent (CTA): Sun-inspired Yellow/Orange (#FFC107 or similar)
+- Typography:
+  - Headings: Montserrat ExtraBold / Poppins Bold
+  - Body: Inter / Poppins Regular
+- Logo: Text-based wordmark in black & white (no symbol)
+
+---
+
+📑 Content & Copy
+Hero
+- Headline: “Reliable Solar Panel Installation for Homes & Businesses.”
+- Subtext: “Trusted by homeowners and businesses for over 15 years.”
+- CTA: “Request a Free Quote”
+- Credibility: “CEC Accredited Solar & Battery Installer & Designer”
+
+Services (stacked layout)
+1. Residential Installation — “We design and install rooftop solar systems that fit your home and budget.”
+2. Commercial Installation — “Tailored solar solutions for offices, retail and industrial sites.”
+3. Maintenance & Support — “Keep your system at peak performance with inspections and repairs.”
+4. Financing Options — “Flexible pathways to go solar sooner. Ask us about current options.”
+
+Proof & Testimonials
+- 15+ Years of Experience
+- 1,200+ Panels Installed
+- Powering Homes & Businesses Across Tasmania
+- Example testimonial: “They made switching to solar simple and stress-free. My bills dropped fast.” — Sarah L.
+
+Contact Section
+- Form fields: Name, Email, Phone, Service Type (Residential/Commercial), Message
+- Right Column:
+  - Phone: 0409 820 219 (click-to-call)
+  - Email: scott@donnachyelectrical.com.au (click-to-email)
+  - Address: 20 Rene Rd, Summerhill TAS 7250, Australia
+  - Service area: “Servicing all of Tasmania’s solar & battery needs.”
+
+Footer
+- Donnachy Electrical Pty Ltd · ABN 91 639 014 850
+- Phone · Email · Address
+- Socials: Facebook, Instagram (placeholders until links ready)
+- Accreditation: Clean Energy Council logo
+
+---
+
+🛠 Tech Stack
+- Frontend: Vite + React + TypeScript + Tailwind CSS
+- Backend: Node.js + Express (for contact form + health check)
+- Form Handling: Nodemailer (SMTP via .env)
+- Tooling: ESLint, Prettier, strict TypeScript
+- Deployment: Replit (ready-to-run project)
+
+---
+
+📂 File Structure
+/
+  package.json
+  vite.config.ts
+  tailwind.config.cjs
+  tsconfig.json
+  .eslintrc.cjs
+  .prettierrc
+  .env.example
+  /public
+    favicon.ico
+    og-image.jpg
+    cec-badge.png
+  /server
+    index.ts
+    mailer.ts
+  /src
+    main.tsx
+    index.css
+    App.tsx
+    /components
+      Header.tsx
+      Hero.tsx
+      Services.tsx
+      Proof.tsx
+      Contact.tsx
+      Footer.tsx
+      Button.tsx
+      Container.tsx
+      SectionHeading.tsx
+      Testimonial.tsx
+    /assets
+      hero.jpg
+      services-residential.jpg
+      services-commercial.jpg
+      services-maintenance.jpg
+      services-finance.jpg
+
+---
+
+♿ Accessibility
+- Semantic HTML (landmarks: header, nav, main, footer)
+- Keyboard navigation with visible focus states
+- aria-live for form errors and success
+- WCAG AA+ colour contrast
+- Respects prefers-reduced-motion
+
+---
+
+📈 SEO
+- Title: “Donnachy Electrical – Solar & Battery Specialists | Tasmania”
+- Meta description: “CEC accredited solar & battery installer and designer serving all of Tasmania. 15+ years’ experience. Request a free quote today.”
+- OpenGraph + Twitter Card (hero image)
+- JSON-LD LocalBusiness schema (with ABN)
+- Favicon & touch icons
+
+---
+
+🔧 Server Requirements
+- Endpoint: POST /api/contact
+- Validate with Zod (Name, Email, Message required)
+- Rate-limit requests
+- Send email with Nodemailer via SMTP creds in .env
+- Return JSON { ok: true, message }
+
+---
+
+📊 JSON-LD Schema
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Donnachy Electrical – Solar & Battery Specialists",
+  "legalName": "Donnachy Electrical Pty Ltd",
+  "identifier": "ABN 91 639 014 850",
+  "telephone": "+61 409 820 219",
+  "email": "scott@donnachyelectrical.com.au",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "20 Rene Rd",
+    "addressLocality": "Summerhill",
+    "addressRegion": "TAS",
+    "postalCode": "7250",
+    "addressCountry": "AU"
+  },
+  "areaServed": "Tasmania",
+  "description": "CEC accredited solar & battery installer and designer serving all of Tasmania. 15+ years’ experience.",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "08:00",
+    "closes": "17:00"
+  }]
+}
+</script>
+
+---
+
+✅ QA Checklist
+- Lighthouse ≥ 95 across Performance, Accessibility, SEO, Best Practices
+- Fully responsive: mobile, tablet, desktop
+- Contact form validates and announces errors via aria-live
+- Images lazy-loaded (except hero) with descriptive alt text
+- Sticky “Request a Quote” CTA on mobile
+- No console errors or unused dependencies
+
+---
+
+Deliverable
+Provide a ready-to-run Replit project with both client and server. Include Tailwind styling, accessibility, SEO optimisations, JSON-LD schema, and a README explaining setup, .env SMTP configuration, and deployment steps.

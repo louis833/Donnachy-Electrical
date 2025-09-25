@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Home, Building, Settings, CreditCard } from "lucide-react";
+import { useLocation } from "wouter";
 import residentialImage from "@assets/generated_images/Residential_home_with_solar_panels_50e3ea30.png";
 import commercialImage from "@assets/generated_images/Commercial_building_solar_installation_7799d776.png";
 import maintenanceImage from "@assets/generated_images/Solar_panel_maintenance_service_cbd358e0.png";
@@ -13,6 +14,7 @@ const services = [
     description: 'We design and install rooftop solar systems that fit your home and budget.',
     icon: Home,
     image: residentialImage,
+    path: '/residential',
   },
   {
     id: 'commercial',
@@ -20,6 +22,7 @@ const services = [
     description: 'Tailored solar solutions for offices, retail and industrial sites.',
     icon: Building,
     image: commercialImage,
+    path: '/commercial',
   },
   {
     id: 'maintenance',
@@ -27,6 +30,7 @@ const services = [
     description: 'Keep your system at peak performance with inspections and repairs.',
     icon: Settings,
     image: maintenanceImage,
+    path: '/maintenance',
   },
   {
     id: 'financing',
@@ -34,10 +38,16 @@ const services = [
     description: 'Flexible pathways to go solar sooner. Ask us about current options.',
     icon: CreditCard,
     image: financeImage,
+    path: '/financing',
   },
 ];
 
 export default function Services() {
+  const [, navigate] = useLocation();
+
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <section id="services" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
@@ -91,7 +101,7 @@ export default function Services() {
                   variant="outline" 
                   className="w-full"
                   data-testid={`button-service-${service.id}`}
-                  onClick={() => console.log(`${service.title} service clicked`)}
+                  onClick={() => navigate(service.path)}
                 >
                   Learn More
                 </Button>
@@ -109,7 +119,7 @@ export default function Services() {
             size="lg" 
             className="text-lg px-8"
             data-testid="button-services-quote"
-            onClick={() => console.log('Services section quote clicked')}
+            onClick={scrollToContact}
           >
             Get Your Free Quote Today
           </Button>

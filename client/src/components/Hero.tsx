@@ -1,9 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle } from "lucide-react";
+import { useLocation } from "wouter";
 import heroImage from "@assets/generated_images/Solar_panels_on_residential_roof_4e7740b1.png";
 
 export default function Hero() {
+  const [, navigate] = useLocation();
+
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <section className="relative min-h-[80vh] flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -45,7 +51,7 @@ export default function Hero() {
               size="lg" 
               className="text-lg px-8 py-4"
               data-testid="button-hero-quote"
-              onClick={() => console.log('Hero quote request clicked')}
+              onClick={scrollToContact}
             >
               Request a Free Quote
             </Button>
@@ -54,7 +60,7 @@ export default function Hero() {
               size="lg" 
               className="text-lg px-8 py-4 bg-white/10 text-white border-white/30 backdrop-blur-sm hover:bg-white/20"
               data-testid="button-hero-learn"
-              onClick={() => console.log('Learn more clicked')}
+              onClick={() => navigate('/about')}
             >
               Learn More
             </Button>
@@ -84,7 +90,7 @@ export default function Hero() {
           size="lg" 
           className="w-full text-lg"
           data-testid="button-mobile-quote"
-          onClick={() => console.log('Mobile quote request clicked')}
+          onClick={scrollToContact}
         >
           Request Free Quote
         </Button>

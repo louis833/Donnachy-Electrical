@@ -71,29 +71,29 @@ export default function FinancingService() {
     {
       scenario: "Young Family",
       systemSize: "6.6kW System",
-      totalCost: "$9,500",
-      afterRebate: "$6,500",
-      monthlyPayment: "$145/month",
-      monthlySaving: "$280/month",
-      netBenefit: "+$135/month"
+      totalCost: "Get a quote today",
+      afterRebate: "Get a quote today",
+      monthlyPayment: "Get a quote today",
+      monthlySaving: "Get a quote today",
+      netBenefit: "Get a quote today"
     },
     {
       scenario: "Retirees",
       systemSize: "5kW System", 
-      totalCost: "$8,200",
-      afterRebate: "$5,500",
-      monthlyPayment: "$0 (paid cash)",
-      monthlySaving: "$220/month",
-      netBenefit: "+$220/month"
+      totalCost: "Get a quote today",
+      afterRebate: "Get a quote today",
+      monthlyPayment: "Get a quote today",
+      monthlySaving: "Get a quote today",
+      netBenefit: "Get a quote today"
     },
     {
       scenario: "Small Business",
       systemSize: "20kW System",
-      totalCost: "$28,000",
-      afterRebate: "$21,000",
-      monthlyPayment: "$420/month",
-      monthlySaving: "$850/month",
-      netBenefit: "+$430/month"
+      totalCost: "Get a quote today",
+      afterRebate: "Get a quote today",
+      monthlyPayment: "Get a quote today",
+      monthlySaving: "Get a quote today",
+      netBenefit: "Get a quote today"
     }
   ];
 

@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, CreditCard, Calculator, TrendingUp, DollarSign, Phone, FileText, Zap } from "lucide-react";
 import { useLocation } from "wouter";
 import financeImage from "@assets/generated_images/Solar_financing_consultation_eb868e8d.png";
-import brighteLogoImage from "@assets/stock_images/brighte_logo_green_t_1d7060cb.jpg";
+import brighteLogoImage from "@assets/brighte_official_logo.png";
 
 export default function FinancingService() {
   const [, navigate] = useLocation();
@@ -134,8 +134,7 @@ export default function FinancingService() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                size="lg" 
-                className="text-lg px-8"
+                size="lg"
                 onClick={scrollToContact}
                 data-testid="button-financing-quote"
               >
@@ -144,7 +143,7 @@ export default function FinancingService() {
               <Button 
                 variant="outline"
                 size="lg"
-                className="text-lg px-8 bg-white/10 text-white border-white/30 backdrop-blur-sm hover:bg-white/20"
+                className="bg-white/10 text-white border-white/30 backdrop-blur-sm"
                 data-testid="button-financing-consultation"
               >
                 <Phone className="mr-2 h-4 w-4" />
@@ -424,86 +423,153 @@ export default function FinancingService() {
         </div>
       </section>
 
-      {/* Loan Details */}
+      {/* Brighte Green Loan Details */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center mb-16">
+            <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-4">
+              Brighte Green Loan
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Use the Brighte Green Loan for energy efficient products such as solar, batteries, solar hot water, and solar heating and cooling.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-6">
-                Solar Loan Benefits
-              </h2>
-              
-              <div className="space-y-4 mb-8">
-                {[
-                  "Interest rates as low as 3.99% (conditions apply)",
-                  "Terms from 2-10 years to suit your budget",
-                  "No early repayment penalties",
-                  "Start saving from day one of installation",
-                  "Build home equity while reducing energy costs", 
-                  "Tax benefits may apply for business installations",
-                  "Pre-approved financing available",
-                  "Same-day approval for qualified applicants"
-                ].map((benefit) => (
-                  <div key={benefit} className="flex items-start gap-3">
-                    <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={20} />
-                    <span className="text-muted-foreground">{benefit}</span>
+              <div className="mb-8">
+                <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-8">
+                  <h3 className="font-heading font-bold text-2xl mb-6 text-center">Loan Overview</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="text-center">
+                      <div className="text-3xl font-extrabold text-primary mb-2" data-testid="text-max-loan">$55,000</div>
+                      <div className="text-sm font-semibold text-black">Maximum Loan Amount</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-extrabold text-primary mb-2" data-testid="text-interest-rate">8.99%</div>
+                      <div className="text-sm font-semibold text-black">From p.a. Fixed Rate*</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-extrabold text-primary mb-2" data-testid="text-approval-time">Minutes</div>
+                      <div className="text-sm font-semibold text-black">Approval Time</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-extrabold text-primary mb-2" data-testid="text-repayment-terms">2-10</div>
+                      <div className="text-sm font-semibold text-black">Year Repayment Terms</div>
+                    </div>
                   </div>
-                ))}
+                </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-heading font-bold text-lg mb-3">Eligible Products</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {[
+                      "Solar panels",
+                      "Battery storage", 
+                      "Inverters",
+                      "Solar system and battery combo",
+                      "Off-grid system",
+                      "Solar heating and cooling",
+                      "Double glazing windows and doors"
+                    ].map((product) => (
+                      <div key={product} className="flex items-start gap-3">
+                        <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                        <span className="text-muted-foreground text-sm">{product}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-heading font-bold text-lg mb-3">Customer Fees</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                      <span className="text-muted-foreground text-sm">Establishment fee starting from $199 (added to loan amount)*</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                      <span className="text-muted-foreground text-sm">$2.70/weekly account keeping fee (included in repayments)</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={16} />
+                      <span className="text-muted-foreground text-sm">No fee for early repayment</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 mt-8">
                 <Button 
                   size="lg"
                   onClick={scrollToContact}
-                  data-testid="button-financing-loan-quote"
+                  data-testid="button-brighte-enquire"
                 >
-                  Apply for Solar Loan
+                  Enquire Now
                 </Button>
                 <Button 
                   variant="outline"
                   size="lg"
                   onClick={() => navigate('/residential')}
-                  data-testid="button-financing-residential"
+                  data-testid="button-brighte-systems"
                 >
-                  View Systems
+                  View Solar Systems
                 </Button>
               </div>
             </div>
 
             <div>
-              <Card className="p-8 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+              <Card className="p-8 bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200">
                 <CardHeader className="p-0 mb-6">
                   <CardTitle className="font-heading font-bold text-2xl text-center">
                     <Calculator className="mx-auto mb-3" size={32} />
-                    Financing Calculator
+                    Loan Details
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
-                  <div className="space-y-4 text-center">
-                    <div className="p-4 bg-white/50 rounded-lg">
-                      <div className="text-lg font-bold">6.6kW Solar System</div>
-                      <div className="text-sm text-muted-foreground">After rebates: $6,500</div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="text-center">
-                        <div className="font-bold">5 Year Loan</div>
-                        <div className="text-2xl text-primary">$135/mo</div>
-                        <div className="text-sm text-muted-foreground">6.99% APR</div>
+                  <div className="space-y-4">
+                    <div className="border-b pb-4">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="font-medium">Finance Amount:</span>
+                        <span className="font-bold" data-testid="text-finance-amount">$2,000 - $55,000</span>
                       </div>
-                      <div className="text-center">
-                        <div className="font-bold">7 Year Loan</div>
-                        <div className="text-2xl text-primary">$105/mo</div>
-                        <div className="text-sm text-muted-foreground">7.99% APR</div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="font-medium">Interest Rate:</span>
+                        <span className="font-bold" data-testid="text-rate-detail">From 8.99% p.a.*</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="font-medium">Comparison Rate:</span>
+                        <span className="font-bold" data-testid="text-comparison-rate">10.48% p.a.^</span>
                       </div>
                     </div>
-                    <div className="border-t pt-4">
-                      <div className="text-lg font-bold text-green-600">Average Monthly Saving</div>
-                      <div className="text-2xl font-bold">$280</div>
-                      <div className="text-sm text-muted-foreground">Based on typical usage</div>
+                    
+                    <div>
+                      <h4 className="font-semibold mb-3">Eligibility Requirements</h4>
+                      <div className="space-y-2">
+                        {[
+                          "Be 18 years or over and an Australian resident",
+                          "Have an Australian driver's licence, passport or Medicare card",
+                          "Provide your own email address and mobile number"
+                        ].map((requirement) => (
+                          <div key={requirement} className="flex items-start gap-2">
+                            <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={14} />
+                            <span className="text-muted-foreground text-sm">{requirement}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
+
+              <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <p className="text-xs text-muted-foreground">
+                  * Interest rates and fees are subject to application and approval. 
+                  ^ Comparison rate calculated on a loan amount of $30,000 over a term of 5 years.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -567,7 +633,6 @@ export default function FinancingService() {
             <Button 
               size="lg"
               variant="secondary"
-              className="text-lg px-8"
               onClick={scrollToContact}
               data-testid="button-financing-cta"
             >
@@ -576,7 +641,7 @@ export default function FinancingService() {
             <Button 
               size="lg"
               variant="outline"
-              className="text-lg px-8 bg-white/10 text-white border-white/30 backdrop-blur-sm hover:bg-white/20"
+              className="bg-white/10 text-white border-white/30 backdrop-blur-sm"
               onClick={() => navigate('/commercial')}
               data-testid="button-financing-commercial"
             >

@@ -5,7 +5,23 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Phone, Mail, MapPin, Clock, CheckCircle, AlertCircle } from "lucide-react";
+
+interface ApiError {
+  success: false;
+  message: string;
+  errors?: Array<{
+    field: string;
+    message: string;
+  }>;
+}
+
+interface ApiSuccess {
+  success: true;
+  message: string;
+  id: string;
+}
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -17,33 +33,79 @@ export default function Contact() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
+    
+    // Clear field error and status messages when user starts typing
+    if (fieldErrors[field]) {
+      setFieldErrors(prev => {
+        const { [field]: _, ...rest } = prev;
+        return rest;
+      });
+    }
+    
+    // Reset status to hide stale success/error messages
+    if (submitStatus !== 'idle') {
+      setSubmitStatus('idle');
+      setStatusMessage('');
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setFieldErrors({});
     
-    // todo: remove mock functionality - replace with actual API call
-    console.log('Contact form submitted:', formData);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert('Thank you for your inquiry! We will contact you within 24 hours.');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        serviceType: '',
-        message: ''
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 1000);
+      
+      const result = await response.json() as ApiSuccess | ApiError;
+      
+      if (result.success) {
+        setSubmitStatus('success');
+        setStatusMessage(result.message);
+        // Clear form on success
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          serviceType: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+        setStatusMessage(result.message);
+        
+        // Set field-specific errors if provided
+        if (result.errors) {
+          const errors: Record<string, string> = {};
+          result.errors.forEach(error => {
+            errors[error.field] = error.message;
+          });
+          setFieldErrors(errors);
+        }
+      }
+    } catch (error) {
+      console.error('Contact form submission error:', error);
+      setSubmitStatus('error');
+      setStatusMessage('Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -100,6 +162,25 @@ export default function Contact() {
               </CardTitle>
             </CardHeader>
             <CardContent>
+              {/* Success/Error Messages */}
+              {submitStatus === 'success' && (
+                <Alert className="mb-6 border-green-200 bg-green-50">
+                  <CheckCircle className="h-4 w-4 text-green-600" />
+                  <AlertDescription className="text-green-800">
+                    {statusMessage}
+                  </AlertDescription>
+                </Alert>
+              )}
+              
+              {submitStatus === 'error' && (
+                <Alert variant="destructive" className="mb-6">
+                  <AlertCircle className="h-4 w-4" />
+                  <AlertDescription>
+                    {statusMessage}
+                  </AlertDescription>
+                </Alert>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name *</Label>
@@ -111,7 +192,11 @@ export default function Contact() {
                     required
                     data-testid="input-name"
                     placeholder="Enter your full name"
+                    className={fieldErrors.name ? "border-red-500 focus-visible:ring-red-500" : ""}
                   />
+                  {fieldErrors.name && (
+                    <p className="text-sm text-red-600 mt-1">{fieldErrors.name}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -124,7 +209,11 @@ export default function Contact() {
                     required
                     data-testid="input-email"
                     placeholder="your@email.com"
+                    className={fieldErrors.email ? "border-red-500 focus-visible:ring-red-500" : ""}
                   />
+                  {fieldErrors.email && (
+                    <p className="text-sm text-red-600 mt-1">{fieldErrors.email}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -136,7 +225,11 @@ export default function Contact() {
                     onChange={(e) => handleInputChange('phone', e.target.value)}
                     data-testid="input-phone"
                     placeholder="0400 000 000"
+                    className={fieldErrors.phone ? "border-red-500 focus-visible:ring-red-500" : ""}
                   />
+                  {fieldErrors.phone && (
+                    <p className="text-sm text-red-600 mt-1">{fieldErrors.phone}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -145,7 +238,10 @@ export default function Contact() {
                     value={formData.serviceType} 
                     onValueChange={(value) => handleInputChange('serviceType', value)}
                   >
-                    <SelectTrigger data-testid="select-service">
+                    <SelectTrigger 
+                      data-testid="select-service"
+                      className={fieldErrors.serviceType ? "border-red-500 focus-visible:ring-red-500" : ""}
+                    >
                       <SelectValue placeholder="Select service type" />
                     </SelectTrigger>
                     <SelectContent>
@@ -156,6 +252,9 @@ export default function Contact() {
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
+                  {fieldErrors.serviceType && (
+                    <p className="text-sm text-red-600 mt-1">{fieldErrors.serviceType}</p>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -168,7 +267,11 @@ export default function Contact() {
                     data-testid="textarea-message"
                     placeholder="Tell us about your solar needs, property details, or any questions you have..."
                     rows={4}
+                    className={fieldErrors.message ? "border-red-500 focus-visible:ring-red-500" : ""}
                   />
+                  {fieldErrors.message && (
+                    <p className="text-sm text-red-600 mt-1">{fieldErrors.message}</p>
+                  )}
                 </div>
 
                 <Button 

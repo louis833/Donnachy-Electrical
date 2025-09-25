@@ -8,10 +8,10 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="font-heading font-extrabold text-2xl text-black">
+            <h1 className="font-heading font-extrabold text-xl md:text-2xl text-black">
               Donnachy Electrical
             </h1>
-            <span className="ml-2 text-muted-foreground font-medium">
+            <span className="hidden sm:inline ml-2 text-muted-foreground font-medium">
               – Solar & Battery Specialists
             </span>
           </div>
@@ -56,7 +56,8 @@ export default function Header() {
               data-testid="button-quote"
               onClick={() => console.log('Quote request clicked')}
             >
-              Request Free Quote
+              <span className="hidden sm:inline">Request Free Quote</span>
+              <span className="sm:hidden">Quote</span>
             </Button>
           </div>
         </div>

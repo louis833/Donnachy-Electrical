@@ -590,184 +590,59 @@ export default function FinancingService() {
         </div>
       </section>
 
-      {/* Brighte Green Loan Details */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-4">
-              Brighte Green Loan
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Use the Brighte Green Loan for energy efficient products such as solar, batteries, solar hot water, and solar heating and cooling.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <div className="mb-8">
-                <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-8">
-                  <h3 className="font-heading font-bold text-2xl mb-6 text-center">Loan Overview</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="text-center">
-                      <div className="text-3xl font-extrabold text-primary mb-2" data-testid="text-max-loan">$55,000</div>
-                      <div className="text-sm font-semibold text-black">Maximum Loan Amount</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-extrabold text-primary mb-2" data-testid="text-interest-rate">8.99%</div>
-                      <div className="text-sm font-semibold text-black">From p.a. Fixed Rate*</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-extrabold text-primary mb-2" data-testid="text-approval-time">Minutes</div>
-                      <div className="text-sm font-semibold text-black">Approval Time</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-extrabold text-primary mb-2" data-testid="text-repayment-terms">2-10</div>
-                      <div className="text-sm font-semibold text-black">Year Repayment Terms</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-heading font-bold text-lg mb-3">Eligible Products</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {[
-                      "Solar panels",
-                      "Battery storage", 
-                      "Inverters",
-                      "Solar system and battery combo",
-                      "Off-grid system",
-                      "Solar heating and cooling",
-                      "Double glazing windows and doors"
-                    ].map((product) => (
-                      <div key={product} className="flex items-start gap-3">
-                        <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                        <span className="text-muted-foreground text-sm">{product}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="font-heading font-bold text-lg mb-3">Customer Fees</h4>
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                      <span className="text-muted-foreground text-sm">Establishment fee starting from $199 (added to loan amount)*</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                      <span className="text-muted-foreground text-sm">$2.70/weekly account keeping fee (included in repayments)</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                      <span className="text-muted-foreground text-sm">No fee for early repayment</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <Button 
-                  size="lg"
-                  onClick={scrollToContact}
-                  data-testid="button-brighte-enquire"
-                >
-                  Enquire Now
-                </Button>
-                <Button 
-                  variant="outline"
-                  size="lg"
-                  onClick={() => navigate('/residential')}
-                  data-testid="button-brighte-systems"
-                >
-                  View Solar Systems
-                </Button>
-              </div>
-            </div>
-
-            <div>
-              <Card className="p-8 bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200">
-                <CardHeader className="p-0 mb-6">
-                  <CardTitle className="font-heading font-bold text-2xl text-center">
-                    <Calculator className="mx-auto mb-3" size={32} />
-                    Loan Details
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <div className="space-y-4">
-                    <div className="border-b pb-4">
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="font-medium">Finance Amount:</span>
-                        <span className="font-bold" data-testid="text-finance-amount">$2,000 - $55,000</span>
-                      </div>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="font-medium">Interest Rate:</span>
-                        <span className="font-bold" data-testid="text-rate-detail">From 8.99% p.a.*</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="font-medium">Comparison Rate:</span>
-                        <span className="font-bold" data-testid="text-comparison-rate">10.48% p.a.^</span>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-semibold mb-3">Eligibility Requirements</h4>
-                      <div className="space-y-2">
-                        {[
-                          "Be 18 years or over and an Australian resident",
-                          "Have an Australian driver's licence, passport or Medicare card",
-                          "Provide your own email address and mobile number"
-                        ].map((requirement) => (
-                          <div key={requirement} className="flex items-start gap-2">
-                            <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={14} />
-                            <span className="text-muted-foreground text-sm">{requirement}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                <p className="text-xs text-muted-foreground">
-                  * Interest rates and fees are subject to application and approval. 
-                  ^ Comparison rate calculated on a loan amount of $30,000 over a term of 5 years.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-4">
-              Financing FAQ
+              Frequently Asked Questions
             </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Get answers to common questions about solar financing and making the switch to renewable energy.
+            </p>
           </div>
 
           <div className="space-y-6">
             {[
               {
                 question: "What credit score is required for solar financing?",
-                answer: "Most lenders require a minimum credit score of 650, though some programs are available for scores as low as 600. We work with multiple lenders to find options for all credit situations."
+                answer: "Most lenders require a minimum credit score of 650, though some programs are available for scores as low as 600. We work with multiple lenders to find options that suit different credit situations."
               },
               {
-                question: "Can I combine rebates with financing?",
-                answer: "Yes! Government rebates are applied upfront to reduce your loan amount. This means you finance less and save more from day one."
+                question: "Can I combine government rebates with financing?",
+                answer: "Absolutely! Government rebates are applied upfront to reduce your total loan amount. This means you finance less and save more from day one. We help calculate your rebates and apply them to your loan."
               },
               {
-                question: "What happens if I sell my house?", 
-                answer: "Solar loans typically transfer with property ownership, or can be paid off from sale proceeds. Solar systems often increase home value by more than the remaining loan balance."
+                question: "What financing options are available for solar?",
+                answer: "We offer various financing solutions including personal loans, green loans, and solar-specific financing. Interest rates typically range from 8.99% to 15% depending on your credit profile and chosen lender."
               },
               {
-                question: "Are there tax benefits for solar loans?",
-                answer: "Interest on solar loans may be tax-deductible if secured by your home. Business installations may qualify for additional depreciation benefits. Consult your tax advisor for specifics."
+                question: "How long are typical solar loan terms?",
+                answer: "Solar loans typically range from 2-10 years. Longer terms mean lower monthly payments but more interest paid over time. We'll help you find the right balance for your budget and goals."
+              },
+              {
+                question: "What happens if I sell my house with a solar loan?",
+                answer: "Solar loans can typically be transferred to the new property owner or paid off from sale proceeds. Solar systems often increase home value by more than the remaining loan balance."
+              },
+              {
+                question: "Are there any fees involved with solar financing?",
+                answer: "Fees vary by lender but typically include an establishment fee ($199-$599) and sometimes ongoing account keeping fees. We'll explain all fees upfront so there are no surprises."
+              },
+              {
+                question: "How quickly can I get approved for solar financing?",
+                answer: "Many of our financing partners offer approval decisions within minutes to hours. Once approved, we can often begin your solar installation within 1-2 weeks."
+              },
+              {
+                question: "Can I pay off my solar loan early?",
+                answer: "Most solar loans allow early repayment without penalties. This can save you significant interest costs if you have the means to pay off the loan ahead of schedule."
+              },
+              {
+                question: "What if my solar system doesn't perform as expected?",
+                answer: "All our systems come with performance guarantees and comprehensive warranties. If there are issues, we'll fix them at no cost to you, and your financing payments remain unchanged."
+              },
+              {
+                question: "Do solar loans affect my debt-to-income ratio?",
+                answer: "Yes, solar loans are considered debt, but the energy savings often offset the monthly payments. Many customers find their net monthly position improves immediately after installation."
               }
             ].map((faq, index) => (
               <Card key={index} className="hover-elevate">
@@ -777,15 +652,29 @@ export default function FinancingService() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground leading-relaxed">
                     {faq.answer}
                   </p>
                 </CardContent>
               </Card>
             ))}
           </div>
+
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground mb-6">
+              Still have questions about solar financing?
+            </p>
+            <Button 
+              size="lg"
+              onClick={scrollToContact}
+              data-testid="button-faq-contact"
+            >
+              Speak with a Financing Expert
+            </Button>
+          </div>
         </div>
       </section>
+
 
       {/* CTA Section */}
       <section className="py-24 bg-black text-white">

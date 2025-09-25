@@ -9,21 +9,24 @@ import brighteLogoImage from "@assets/brighte_official_logo.png";
 export default function FinancingService() {
   const [, navigate] = useLocation();
   const [selectedSystemSize, setSelectedSystemSize] = useState('6.6');
-  const [selectedBatterySize, setSelectedBatterySize] = useState('10');
+  const [selectedBatterySize, setSelectedBatterySize] = useState('5');
 
   const systemSizes = [
-    { size: '6.6', rebate: 2200, label: '6.6kW System' },
-    { size: '9.9', rebate: 3300, label: '9.9kW System' },
-    { size: '13.3', rebate: 4400, label: '13.3kW System' },
-    { size: '20', rebate: 6600, label: '20kW System' },
-    { size: '100', rebate: 33000, label: '100kW System' }
+    { size: '6.6', rebate: 1794, label: '6.6kW System' },
+    { size: '9.9', rebate: 2730, label: '9.9kW System' },
+    { size: '13.3', rebate: 3666, label: '13.3kW System' },
+    { size: '19.8', rebate: 5460, label: '19.8kW System' },
+    { size: '40', rebate: 11076, label: '40kW System' },
+    { size: '100', rebate: 27729, label: '100kW System' }
   ];
 
   const batterySizes = [
-    { size: '10', rebate: 1500, label: '10kWh Battery' },
-    { size: '13', rebate: 2000, label: '13kWh Battery' },
-    { size: '16', rebate: 2000, label: '16kWh Battery' },
-    { size: '20', rebate: 2000, label: '20kWh Battery' }
+    { size: '5', rebate: 1720, label: '5kWh Battery' },
+    { size: '10', rebate: 3440, label: '10kWh Battery' },
+    { size: '20', rebate: 6880, label: '20kWh Battery' },
+    { size: '30', rebate: 10320, label: '30kWh Battery' },
+    { size: '40', rebate: 13760, label: '40kWh Battery' },
+    { size: '50', rebate: 17200, label: '50kWh Battery' }
   ];
 
   const options = [

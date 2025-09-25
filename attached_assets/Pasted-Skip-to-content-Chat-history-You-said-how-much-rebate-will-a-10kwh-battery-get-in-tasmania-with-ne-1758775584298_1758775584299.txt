@@ -1,0 +1,408 @@
+Skip to content
+Chat history
+
+You said:
+how much rebate will a 10kwh battery get in tasmania with new incentive
+ChatGPT said:
+If you install a 10 kWh battery in Tasmania under the new “Cheaper Home Batteries” (federal) program, the rebate is expected to be up to $3,720 (i.e. about $372/kWh) before administrative fees. 
+Solahart Northern Tasmania
++2
+Tasmania Safer Solar
++2
+
+Some providers note that after fees the effective discount might be closer to ~$330/kWh, so your net rebate might be somewhat lower (≈ $3,300) for a 10 kWh system. 
+Solahart Hobart
+
+If you like, I can check the exact rebate you’d get for your postcode (Tassie) including all fees and eligibility conditions. Do you want me to do that?
+
+You said:
+yes
+ChatGPT said:
+Here’s a more precise breakdown for Tasmania under the Cheaper Home Batteries Program (from 1 July 2025 onwards):
+
+✅ What the policy says (federal)
+The rebate is a discount of about 30 % on the upfront cost of installing small-scale battery systems. 
+Clean Energy Regulator
++3
+Energy.gov.au
++3
+DCCEEW
++3
+
+It is calculated based on the usable capacity (kWh) of the battery. 
+Clean Energy Regulator
++2
+DCCEEW
++2
+
+The maximum rebate is $372 per usable kWh before administrative fees and charges. 
+Solar Calculator
++5
+Solahart Hobart
++5
+GEM Energy
++5
+
+Only the first 50 kWh of usable capacity is eligible. 
+Solar Calculator
++3
+DCCEEW
++3
+Gridless Heating & Cooling
++3
+
+After “administrative fees and charges,” installers often estimate the effective discount is closer to $330 per usable kWh. 
+Solahart Hobart
++2
+Solahart Northern Tasmania
++2
+
+⚙ Calculation for a 10 kWh system (Tasmania)
+If you choose a 10 kWh usable battery system (i.e. “usable capacity” is 10 kWh):
+
+Gross rebate = 10 kWh × $372/kWh = $3,720 
+Clean Energy Regulator
++3
+Solahart Hobart
++3
+Solar Calculator
++3
+
+After subtracting administrative/installation‐related costs, many estimates reduce that to closer to $3,300 net discount. 
+Solahart Hobart
++1
+
+So in your case, for Tasmania, you’d likely get a rebate in the ballpark of $3,300–$3,720 (depending on fees, installer, battery model, etc.).
+
+⚠ Other relevant details for Tasmania
+Tasmania does not currently have a state-level direct battery rebate*, only the federal scheme. 
+Tasmania Safer Solar
++2
+Solar Battery Group
++2
+
+There was a state Energy Saver Loan scheme (0% interest) for energy upgrades (including batteries), with loans up to $10,000. But as of September 2025, that loan scheme closed early (funds exhausted). 
+Solar Market
+
+Your battery must be installed after 1 July 2025 (or at least commissioned/activated after that) to be eligible. 
+Solar Solutions Tasmania
++4
+Clean Energy Regulator
++4
+DCCEEW
++4
+
+The battery must meet certain technical and installation standards (e.g. VPP-capable, be on approved product lists, installed by accredited installer) under the program. 
+DCCEEW
++2
+Gridless Heating & Cooling
++2
+
+If you like, I can estimate your net rebate after all fees (based on Hobart area) and compare what the out-of-pocket cost might be. Do you want me to run that for your specific postcode?
+
+You said:
+what is the official calculation for the federal scheme and what size batteries does it apply to
+ChatGPT said:
+Here’s a summary of the official rules (and how the calculation works) for the federal Cheaper Home Batteries Program (as of 2025) in Australia:
+
+🏛 Official Framework & Key Limits
+The program is administered under the Small-scale Renewable Energy Scheme (SRES) by the Clean Energy Regulator. 
+Clean Energy Regulator
++2
+DCCEEW
++2
+
+The discount is delivered via Small-scale Technology Certificates (STCs) created for eligible battery installations. 
+Clean Energy Regulator
++2
+DCCEEW
++2
+
+The battery must be installed (i.e. certificate of electrical compliance issued) on or after 1 July 2025 to be eligible. 
+DCCEEW
++2
+DCCEEW
++2
+
+The battery system must comply with technical and safety standards (e.g. be on the Clean Energy Council’s approved product list, installed by accredited installers) and comply with relevant state/territory electrical regulations. 
+DCCEEW
++2
+Clean Energy Regulator
++2
+
+The battery must be used in conjunction with a solar PV system (either existing or new). Battery systems installed alone (without solar) are not eligible. 
+DCCEEW
++2
+DCCEEW
++2
+
+📏 Size Ranges & Capacity Eligibility
+The nominal (total) capacity of an eligible battery system must be between 5 kWh and 100 kWh. 
+DCCEEW
++2
+Clean Energy Regulator
++2
+
+However, only the first 50 kWh of usable capacity are eligible for STCs / rebates. That means even if you install a larger battery, the incentive only applies up to 50 kWh usable. 
+DCCEEW
++4
+Clean Energy Regulator
++4
+DCCEEW
++4
+
+If you already have a battery (that has not previously received a rebate under this scheme), you may be able to add additional capacity under these rules — provided the added portion is at least 5 kWh nominal and the total nominal capacity doesn’t exceed 100 kWh. 
+DCCEEW
++2
+DCCEEW
++2
+
+The “stacking” of modular battery units is allowed (i.e. combining smaller modules into a system), as long as the combined system meets the 5–100 kWh nominal requirement and is on the approved product list. 
+DCCEEW
+
+🔢 How the Rebate / Discount Is Calculated
+The rebate is applied based on the usable capacity (kWh) of the battery, up to the eligible limit (i.e. up to 50 kWh usable). 
+Solar Proof
++3
+Clean Energy Regulator
++3
+DCCEEW
++3
+
+In 2025, the rate is 9.3 STCs per usable kWh. 
+Solar Proof
++3
+Solar Choice
++3
+Clean Energy Regulator
++3
+
+Expressed in dollar terms, that works out to a maximum of $372 per usable kWh (i.e. 9.3 STCs × assumed STC value) in 2025. 
+DCCEEW
++3
+Clean Energy Regulator
++3
+Solar Proof
++3
+
+Thus, for a battery with usable capacity 
+C
+C in kWh (where 
+C
+≤
+50
+C≤50), the gross rebate is:
+
+Rebate
+=
+9.3
+×
+C
+×
+(
+STC price
+)
+Rebate=9.3×C×(STC price)
+or equivalently:
+
+Rebate
+=
+C
+×
+$
+372
+(
+for 2025, before fees or adjustments
+)
+Rebate=C×$372(for 2025, before fees or adjustments)
+Because of administrative, transaction, and certificate costs, the effective discount experienced by a buyer often ends up lower. Some industry estimates suggest the net rate might be closer to $330 per kWh usable in practice. 
+DCCEEW
++4
+Solar Choice
++4
+Solar Proof
++4
+
+Over time the discount rate (i.e. number of STCs per kWh) will gradually decline (i.e. less favourable) until the scheme ends in 2030. 
+DCCEEW
++2
+Clean Energy Regulator
++2
+
+If you like, I can show you a worked example for your postcode or battery size, and compare “gross rebate” vs “net to you” under typical assumptions. Would you like me to do that?
+
+You said:
+do this calculation for tasmania
+ChatGPT said:
+Here is a worked example of how the federal Cheaper Home Batteries Program discount / rebate is calculated (which applies nationwide, including Tasmania) — and how much you might expect in “real” dollar terms for a battery in Tasmania.
+
+🔍 Key rules & assumptions (Tasmania / national) to use in the example
+From the official program documentation:
+
+The discount is based on the battery’s usable capacity (kWh). 
+Clean Energy Regulator
++2
+DCCEEW
++2
+
+Only the first 50 kWh of usable capacity is eligible for the rebate (i.e. even if your battery has more usable capacity, the rebate only pays up to 50 kWh. ) 
+Clean Energy Regulator
++2
+DCCEEW
++2
+
+The eligible nominal (total) capacity for installation must be between 5 kWh and 100 kWh. 
+Clean Energy Regulator
++2
+DCCEEW
++2
+
+The program is administered via the Small-scale Renewable Energy Scheme (SRES), by issuing Small-scale Technology Certificates (STCs) to battery systems. 
+Solar Choice
++3
+Clean Energy Regulator
++3
+DCCEEW
++3
+
+For 2025, the program sets the multiplier to 9.3 STCs per usable kWh (for eligible capacity) 
+Solar Choice
++2
+Clean Energy Regulator
++2
+
+The dollar value per STC (after broker / transaction / administration costs) is assumed in many analyses to be around AUD $37 per STC (or slightly variable) in 2025, giving an effective rebate value around $344 per usable kWh in many real-world quotes. 
+SunStak Energy Geeks
++3
+Solar Choice
++3
+Clean Energy Regulator
++3
+
+Some sources also still quote the “maximum” gross rebate of $372 per usable kWh, but note that that is before subtracting fees / admin costs. 
+SunStak Energy Geeks
++2
+Energy.gov.au
++2
+
+The discount is “around 30 %” of the upfront cost for eligible systems. 
+Energy.gov.au
++2
+DCCEEW
++2
+
+🧮 Worked example: 10 kWh usable battery in Tasmania
+Let’s pick a battery with 10 kWh usable capacity (i.e. that’s the amount you can actually use / discharge).
+
+Step 1: Calculate STCs eligible
+
+Multiplier: 9.3 STCs per usable kWh (2025)
+
+Eligible usable capacity: 10 kWh (within the 50 kWh cap)
+
+So STCs = 10 × 9.3 = 93 STCs
+
+Step 2: Estimate STC dollar value (after administration / transaction fees)
+
+Many industry sources use ~$37 per STC (post fees) as a working assumption in 2025. 
+Solar Choice
++2
+Clean Energy Regulator
++2
+
+Some sources still cite the “maximum” of $372/kWh which corresponds to 9.3 × $40 (i.e. ~$40 per STC) ignoring fees. 
+SunStak Energy Geeks
++2
+Clean Energy Regulator
++2
+
+Let’s do both:
+
+Conservative / realistic: 93 STCs × $37 = $3,441
+
+Gross (before fees, ideal): 93 STCs × $40 = $3,720
+
+So in practice, you might expect something close to $3,400 as a rebate for a 10 kWh usable battery once fees are considered.
+
+Step 3: Compare to “$ per kWh” basis
+
+On a per-usable-kWh basis:
+
+With $3,441 rebate → ~ $344.1/kWh
+
+With $3,720 rebate → ~ $372/kWh
+
+This aligns with many industry sources quoting ~ $344/kWh after admin costs or “up to $372/kWh” before fees. 
+DCCEEW
++3
+Solar Choice
++3
+SunStak Energy Geeks
++3
+
+✅ Summary for Tasmania / your case (10 kWh)
+Eligible STCs: 93
+
+Estimated rebate (realistic): ~ AUD $3,441
+
+Maximum “gross” rebate (before admin / fees): ~ AUD $3,720
+
+Implied rebate rate: ~$344/kWh (practical) to $372/kWh (gross)
+
+If you like, I can run this for several battery sizes (e.g. 5, 10, 20, 50 kWh) for your postcode in Hobart so you see how rebates scale for your local area. Do you want me to do that?
+
+You said:
+now do this calculation for STC on solar panels system size 6.6kw, 9.9, 13.3, 19.8, 40 & 100 in tasmania
+ChatGPT said:
+
+Thought for 1m 1s
+Here’s the official STC math for Tasmania and the results for the sizes you asked about (assuming install in 2025):
+
+Formula (CER):
+STCs = System size (kW) × Zone rating × Deeming years, rounded down to a whole number. 
+SmartConsult
++1
+
+Tasmania zone: Postcodes 7000–8999 are Zone 4 with rating = 1.185. 
+Clean Energy Regulator
+
+Deeming years in 2025: 6 years (scheme steps down each Jan 1, ends 2030). 
+Clean Energy Regulator
+
+Eligibility cap: Solar PV up to 100 kW qualifies under SRES. 
+Clean Energy Regulator
+
+STC counts (Tasmania, 2025)
+(using rating 1.185 and 6 years; all values floored)
+
+System size	STCs
+6.6 kW	46
+9.9 kW	70
+13.3 kW	94
+19.8 kW	140
+40 kW	284
+100 kW	711
+Computation example: 6.6 × 1.185 × 6 = 46.926 → 46 STCs (round down). 
+SmartConsult
+
+Indicative dollar value (optional)
+STCs trade near the Clearing House reference of $40 (ex-GST), with market quotes often around $38.5–$40. Multiplying the STC counts above gives rough “rebate” ranges:
+
+System size	Est. at $38.5	Est. at $40
+6.6 kW	~$1,771	~$1,840
+9.9 kW	~$2,695	~$2,800
+13.3 kW	~$3,619	~$3,760
+19.8 kW	~$5,390	~$5,600
+40 kW	~$10,934	~$11,360
+100 kW	~$27,374	~$28,440
+(Spot prices move; the Clearing House lists $40/STC and CER noted $39.90 through much of Q1-2025. Installers may also subtract admin/processing fees.) 
+Clean Energy Regulator
++1
+
+If you give me a postcode and install month, I can lock in the exact zone (it’s Zone 4 across TAS, but I’ll still verify) and use a current STC price from a trader you prefer to quote a precise figure.
+
+
+
+
+No file chosenNo file chosen
+ChatGPT can make mistakes. OpenAI doesn't use KPI Digital workspace data to train its models.

@@ -5,7 +5,7 @@ import { useLocation } from "wouter";
 import residentialImage from "@assets/generated_images/Residential_home_with_solar_panels_50e3ea30.png";
 import commercialImage from "@assets/generated_images/Commercial_building_solar_installation_7799d776.png";
 import maintenanceImage from "@assets/generated_images/Solar_panel_maintenance_service_cbd358e0.png";
-import financeImage from "@assets/generated_images/Solar_financing_consultation_eb868e8d.png";
+import financeImage from "@assets/stock_images/solar_panel_financin_c9d55263.jpg";
 
 const services = [
   {

@@ -2,11 +2,29 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, CreditCard, Calculator, TrendingUp, DollarSign, Phone, FileText, Zap } from "lucide-react";
 import { useLocation } from "wouter";
+import { useState } from "react";
 import financeImage from "@assets/generated_images/Solar_financing_consultation_eb868e8d.png";
 import brighteLogoImage from "@assets/brighte_official_logo.png";
 
 export default function FinancingService() {
   const [, navigate] = useLocation();
+  const [selectedSystemSize, setSelectedSystemSize] = useState('6.6');
+  const [selectedBatterySize, setSelectedBatterySize] = useState('10');
+
+  const systemSizes = [
+    { size: '6.6', rebate: 2200, label: '6.6kW System' },
+    { size: '9.9', rebate: 3300, label: '9.9kW System' },
+    { size: '13.3', rebate: 4400, label: '13.3kW System' },
+    { size: '20', rebate: 6600, label: '20kW System' },
+    { size: '100', rebate: 33000, label: '100kW System' }
+  ];
+
+  const batterySizes = [
+    { size: '10', rebate: 1500, label: '10kWh Battery' },
+    { size: '13', rebate: 2000, label: '13kWh Battery' },
+    { size: '16', rebate: 2000, label: '16kWh Battery' },
+    { size: '20', rebate: 2000, label: '20kWh Battery' }
+  ];
 
   const options = [
     {
@@ -33,22 +51,10 @@ export default function FinancingService() {
 
   const rebates = [
     {
-      name: "Federal STC Rebate",
-      description: "Small-scale Technology Certificates reduce system cost",
-      saving: "Up to $3,500",
-      eligibility: "Systems up to 100kW capacity"
-    },
-    {
       name: "Tasmanian Feed-in Tariff",
       description: "Earn money for excess solar power exported to grid",
       saving: "8-10c per kWh",
       eligibility: "All residential & small commercial systems"
-    },
-    {
-      name: "Battery Rebate (Tas)",
-      description: "Government rebate for home battery storage systems",
-      saving: "Up to $2,000",
-      eligibility: "Tasmanian residents with solar systems"
     },
     {
       name: "Business Incentives",
@@ -328,45 +334,203 @@ export default function FinancingService() {
         </div>
       </section>
 
-      {/* Government Rebates */}
+      {/* Rebate Calculators */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-4">
-              Additional Rebates & Incentives
+              Rebate Calculators
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Beyond our Brighte partnership programs, take advantage of these additional government incentives.
+              Calculate your potential government rebates based on your system size and requirements.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {rebates.map((rebate) => (
-              <Card key={rebate.name} className="hover-elevate">
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="font-heading font-bold text-lg">
-                      {rebate.name}
-                    </CardTitle>
-                    <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-bold">
-                      {rebate.saving}
-                    </span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            {/* STC Rebate Calculator */}
+            <Card className="p-8 hover-elevate">
+              <CardHeader className="p-0 mb-6">
+                <CardTitle className="font-heading font-bold text-2xl text-center">
+                  <Calculator className="mx-auto mb-3" size={32} />
+                  Federal STC Rebate Calculator
+                </CardTitle>
+                <p className="text-muted-foreground text-center">
+                  Small-scale Technology Certificates reduce your system cost
+                </p>
+              </CardHeader>
+              <CardContent className="p-0">
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium mb-3">Select System Size:</label>
+                    <div className="grid grid-cols-1 gap-2">
+                      {systemSizes.map((system) => (
+                        <button
+                          key={system.size}
+                          onClick={() => setSelectedSystemSize(system.size)}
+                          className={`p-3 rounded-lg border text-left transition-colors ${
+                            selectedSystemSize === system.size
+                              ? 'border-primary bg-primary/5 text-primary'
+                              : 'border-gray-200 hover:border-primary/50'
+                          }`}
+                          data-testid={`button-system-${system.size}`}
+                        >
+                          <div className="flex justify-between items-center">
+                            <span className="font-medium">{system.label}</span>
+                            <span className="font-bold text-primary">${system.rebate.toLocaleString()}</span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                  <p className="text-muted-foreground text-sm">
-                    {rebate.description}
-                  </p>
-                </CardHeader>
-                <CardContent>
+                  <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-lg p-4">
+                    <div className="text-center">
+                      <div className="text-sm text-muted-foreground mb-1">Your STC Rebate:</div>
+                      <div className="text-3xl font-extrabold text-primary" data-testid="text-stc-rebate">
+                        ${systemSizes.find(s => s.size === selectedSystemSize)?.rebate.toLocaleString()}
+                      </div>
+                      <div className="text-xs text-muted-foreground mt-2">
+                        For {systemSizes.find(s => s.size === selectedSystemSize)?.label}
+                      </div>
+                    </div>
+                  </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="text-primary" size={16} />
                     <span className="text-sm text-muted-foreground">
-                      {rebate.eligibility}
+                      Systems up to 100kW capacity
                     </span>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Battery Rebate Calculator */}
+            <Card className="p-8 hover-elevate">
+              <CardHeader className="p-0 mb-6">
+                <CardTitle className="font-heading font-bold text-2xl text-center">
+                  <Calculator className="mx-auto mb-3" size={32} />
+                  Battery Rebate Calculator (TAS)
+                </CardTitle>
+                <p className="text-muted-foreground text-center">
+                  Government rebate for home battery storage systems
+                </p>
+              </CardHeader>
+              <CardContent className="p-0">
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium mb-3">Select Battery Size:</label>
+                    <div className="grid grid-cols-1 gap-2">
+                      {batterySizes.map((battery) => (
+                        <button
+                          key={battery.size}
+                          onClick={() => setSelectedBatterySize(battery.size)}
+                          className={`p-3 rounded-lg border text-left transition-colors ${
+                            selectedBatterySize === battery.size
+                              ? 'border-primary bg-primary/5 text-primary'
+                              : 'border-gray-200 hover:border-primary/50'
+                          }`}
+                          data-testid={`button-battery-${battery.size}`}
+                        >
+                          <div className="flex justify-between items-center">
+                            <span className="font-medium">{battery.label}</span>
+                            <span className="font-bold text-primary">${battery.rebate.toLocaleString()}</span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-lg p-4">
+                    <div className="text-center">
+                      <div className="text-sm text-muted-foreground mb-1">Your Battery Rebate:</div>
+                      <div className="text-3xl font-extrabold text-green-600" data-testid="text-battery-rebate">
+                        ${batterySizes.find(b => b.size === selectedBatterySize)?.rebate.toLocaleString()}
+                      </div>
+                      <div className="text-xs text-muted-foreground mt-2">
+                        For {batterySizes.find(b => b.size === selectedBatterySize)?.label}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="text-primary" size={16} />
+                    <span className="text-sm text-muted-foreground">
+                      Tasmanian residents with solar systems
+                    </span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
+
+          {/* Combined Savings */}
+          <div className="text-center">
+            <Card className="max-w-2xl mx-auto p-8 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+              <CardHeader className="p-0 mb-6">
+                <CardTitle className="font-heading font-bold text-2xl">
+                  Total Potential Rebates
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-0">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                  <div>
+                    <div className="text-lg font-semibold text-primary">STC Rebate</div>
+                    <div className="text-2xl font-extrabold">
+                      ${systemSizes.find(s => s.size === selectedSystemSize)?.rebate.toLocaleString()}
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-semibold text-green-600">Battery Rebate</div>
+                    <div className="text-2xl font-extrabold">
+                      ${batterySizes.find(b => b.size === selectedBatterySize)?.rebate.toLocaleString()}
+                    </div>
+                  </div>
+                  <div className="border-l border-primary/30 pl-4">
+                    <div className="text-lg font-semibold text-black">Total Savings</div>
+                    <div className="text-3xl font-extrabold text-primary" data-testid="text-total-rebates">
+                      ${((systemSizes.find(s => s.size === selectedSystemSize)?.rebate || 0) + 
+                        (batterySizes.find(b => b.size === selectedBatterySize)?.rebate || 0)).toLocaleString()}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Additional Incentives */}
+          {rebates.length > 0 && (
+            <div className="mt-16">
+              <div className="text-center mb-8">
+                <h3 className="font-heading font-bold text-2xl text-black mb-4">
+                  Additional Incentives
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {rebates.map((rebate) => (
+                  <Card key={rebate.name} className="hover-elevate">
+                    <CardHeader>
+                      <div className="flex justify-between items-start mb-2">
+                        <CardTitle className="font-heading font-bold text-lg">
+                          {rebate.name}
+                        </CardTitle>
+                        <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-bold">
+                          {rebate.saving}
+                        </span>
+                      </div>
+                      <p className="text-muted-foreground text-sm">
+                        {rebate.description}
+                      </p>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="text-primary" size={16} />
+                        <span className="text-sm text-muted-foreground">
+                          {rebate.eligibility}
+                        </span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

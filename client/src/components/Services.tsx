@@ -1,0 +1,120 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Home, Building, Settings, CreditCard } from "lucide-react";
+import residentialImage from "@assets/generated_images/Residential_home_with_solar_panels_50e3ea30.png";
+import commercialImage from "@assets/generated_images/Commercial_building_solar_installation_7799d776.png";
+import maintenanceImage from "@assets/generated_images/Solar_panel_maintenance_service_cbd358e0.png";
+import financeImage from "@assets/generated_images/Solar_financing_consultation_eb868e8d.png";
+
+const services = [
+  {
+    id: 'residential',
+    title: 'Residential Installation',
+    description: 'We design and install rooftop solar systems that fit your home and budget.',
+    icon: Home,
+    image: residentialImage,
+  },
+  {
+    id: 'commercial',
+    title: 'Commercial Installation',
+    description: 'Tailored solar solutions for offices, retail and industrial sites.',
+    icon: Building,
+    image: commercialImage,
+  },
+  {
+    id: 'maintenance',
+    title: 'Maintenance & Support',
+    description: 'Keep your system at peak performance with inspections and repairs.',
+    icon: Settings,
+    image: maintenanceImage,
+  },
+  {
+    id: 'financing',
+    title: 'Financing Options',
+    description: 'Flexible pathways to go solar sooner. Ask us about current options.',
+    icon: CreditCard,
+    image: financeImage,
+  },
+];
+
+export default function Services() {
+  return (
+    <section id="services" className="py-24 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-4">
+            Our Solar Services
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            From residential rooftops to commercial installations, we provide comprehensive 
+            solar solutions backed by 15+ years of experience.
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {services.map((service) => (
+            <Card 
+              key={service.id} 
+              className="hover-elevate transition-all duration-300 overflow-hidden"
+              data-testid={`card-service-${service.id}`}
+            >
+              {/* Service Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/20"></div>
+                <div className="absolute top-4 left-4">
+                  <div className="bg-white/90 backdrop-blur-sm p-2 rounded-lg">
+                    <service.icon size={24} className="text-primary" />
+                  </div>
+                </div>
+              </div>
+
+              <CardHeader>
+                <CardTitle className="font-heading font-bold text-xl">
+                  {service.title}
+                </CardTitle>
+              </CardHeader>
+
+              <CardContent>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+                
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  data-testid={`button-service-${service.id}`}
+                  onClick={() => console.log(`${service.title} service clicked`)}
+                >
+                  Learn More
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center mt-16">
+          <p className="text-lg text-muted-foreground mb-6">
+            Ready to start your solar journey?
+          </p>
+          <Button 
+            size="lg" 
+            className="text-lg px-8"
+            data-testid="button-services-quote"
+            onClick={() => console.log('Services section quote clicked')}
+          >
+            Get Your Free Quote Today
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}

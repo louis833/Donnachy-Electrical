@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Header() {
@@ -25,9 +24,6 @@ export default function Header() {
             <h1 className="font-heading font-extrabold text-xl md:text-2xl text-black">
               Donnachy Electrical
             </h1>
-            <span className="hidden sm:inline ml-2 text-muted-foreground font-medium">
-              – Solar & Battery Specialists
-            </span>
           </motion.div>
 
           {/* Navigation */}
@@ -55,39 +51,21 @@ export default function Header() {
             </a>
           </nav>
 
-          {/* CTA Buttons */}
-          <div className="flex items-center gap-4">
-            <motion.a 
-              href="tel:+61409820219" 
-              className="hidden lg:flex items-center gap-2 text-foreground hover:text-primary transition-colors"
-              data-testid="link-phone"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 300 }}
+          {/* CTA Button */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <Button 
+              size="default"
+              data-testid="button-quote"
+              onClick={scrollToContact}
             >
-              <motion.div
-                whileHover={{ rotate: 15 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Phone size={18} />
-              </motion.div>
-              <span className="font-medium">0409 820 219</span>
-            </motion.a>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <Button 
-                size="default"
-                data-testid="button-quote"
-                onClick={scrollToContact}
-              >
-                <span className="hidden sm:inline">Request Free Quote</span>
-                <span className="sm:hidden">Quote</span>
-              </Button>
-            </motion.div>
-          </div>
+              <span className="hidden sm:inline">Request Free Quote</span>
+              <span className="sm:hidden">Quote</span>
+            </Button>
+          </motion.div>
         </div>
       </div>
     </motion.header>

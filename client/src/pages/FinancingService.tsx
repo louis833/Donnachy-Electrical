@@ -553,44 +553,44 @@ export default function FinancingService() {
           <div className="space-y-6">
             {[
               {
-                question: "What credit score is required for solar financing?",
-                answer: "Most lenders require a minimum credit score of 650, though some programs are available for scores as low as 600. We work with multiple lenders to find options that suit different credit situations."
+                question: "What financing options does Brighte offer?",
+                answer: "Brighte offers two main financing solutions: Brighte Green Loan with rates from 5.89% p.a. fixed for amounts up to $30,000 over 2-7 years, and 0% Interest Payment Plans for amounts up to $55,000 over 6 months to 10 years."
               },
               {
-                question: "Can I combine government rebates with financing?",
-                answer: "Absolutely! Government rebates are applied upfront to reduce your total loan amount. This means you finance less and save more from day one. We help calculate your rebates and apply them to your loan."
+                question: "What are the eligibility requirements for Brighte financing?",
+                answer: "You must be 18+, an Australian citizen or permanent resident, own or be purchasing a home, and be employed, self-employed, self-funded retiree, or receiving Government Age Pension. You'll need Australian ID and proof of income."
               },
               {
-                question: "What financing options are available for solar?",
-                answer: "We offer various financing solutions including personal loans, green loans, and solar-specific financing. Interest rates typically range from 8.99% to 15% depending on your credit profile and chosen lender."
+                question: "What fees are involved with Brighte financing?",
+                answer: "Green Loan: Establishment fee from $199, account keeping $2.70/week. 0% Interest Plan: Establishment fee $75, account keeping $2.30/week. Late payment fees are $4.99 for both options."
               },
               {
-                question: "How long are typical solar loan terms?",
-                answer: "Solar loans typically range from 2-10 years. Longer terms mean lower monthly payments but more interest paid over time. We'll help you find the right balance for your budget and goals."
+                question: "How does the application process work?",
+                answer: "You must apply through a Brighte-approved installer. The installer provides a quote including financing options, guides you through the application, and approval is often received within minutes."
               },
               {
-                question: "What happens if I sell my house with a solar loan?",
-                answer: "Solar loans can typically be transferred to the new property owner or paid off from sale proceeds. Solar systems often increase home value by more than the remaining loan balance."
+                question: "Can I combine government rebates with Brighte financing?",
+                answer: "Yes, government rebates like the Federal Solar Tax Credit (currently ~$3,300 for 6.6kW systems) are available for both cash and financed purchases, reducing your overall system cost."
               },
               {
-                question: "Are there any fees involved with solar financing?",
-                answer: "Fees vary by lender but typically include an establishment fee ($199-$599) and sometimes ongoing account keeping fees. We'll explain all fees upfront so there are no surprises."
+                question: "Is the 0% interest plan really free?",
+                answer: "While there's no interest charged, Brighte charges merchant fees to installers (up to 35% for 0% plans) which may be factored into system quotes. Compare total costs carefully against cash prices."
               },
               {
-                question: "How quickly can I get approved for solar financing?",
-                answer: "Many of our financing partners offer approval decisions within minutes to hours. Once approved, we can often begin your solar installation within 1-2 weeks."
+                question: "What special programs are available for Tasmanians?",
+                answer: "Tasmania offers the Energy Saver Loan with 0% interest for up to $10,000 per property. Funding is limited and applications close September 1, 2025."
               },
               {
-                question: "Can I pay off my solar loan early?",
-                answer: "Most solar loans allow early repayment without penalties. This can save you significant interest costs if you have the means to pay off the loan ahead of schedule."
+                question: "How long does approval take?",
+                answer: "Brighte offers fast approval decisions, often within minutes to hours. Once approved, your solar installation can typically begin within 1-2 weeks."
               },
               {
-                question: "What if my solar system doesn't perform as expected?",
-                answer: "All our systems come with performance guarantees and comprehensive warranties. If there are issues, we'll fix them at no cost to you, and your financing payments remain unchanged."
+                question: "Can I pay off my Brighte loan early?",
+                answer: "Yes, most Brighte loans allow early repayment. Check your specific loan terms for any conditions, as early payment can save you money on interest and fees."
               },
               {
-                question: "Do solar loans affect my debt-to-income ratio?",
-                answer: "Yes, solar loans are considered debt, but the energy savings often offset the monthly payments. Many customers find their net monthly position improves immediately after installation."
+                question: "What if I want to sell my house with a Brighte loan?",
+                answer: "Brighte loans are personal loans that stay with you, not the property. The loan would need to be paid off or transferred according to your loan agreement terms."
               }
             ].map((faq, index) => (
               <Card key={index} className="hover-elevate">

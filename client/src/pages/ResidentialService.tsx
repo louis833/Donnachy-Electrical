@@ -241,27 +241,33 @@ export default function ResidentialService() {
                   <div className="space-y-4">
                     <div className="flex justify-between">
                       <span className="font-medium">System Size:</span>
-                      <span>6.6kW (20 panels)</span>
+                      <span>9.8kW (20 panels)</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="font-medium">Annual Generation:</span>
-                      <span>~9,000 kWh</span>
+                      <span>~15,400 kWh</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="font-medium">Annual Savings:</span>
-                      <span>$2,500-$3,500</span>
+                      <span>~$3,100</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="font-medium">Payback Period:</span>
-                      <span>4-6 years</span>
+                      <span>4-5 years</span>
                     </div>
-                    <div className="flex justify-between font-bold text-lg border-t pt-4">
-                      <span>Total Investment:</span>
-                      <span>From $8,900*</span>
+                    <div className="border-t pt-4">
+                      <Button 
+                        className="w-full text-lg font-bold"
+                        size="lg"
+                        onClick={scrollToContact}
+                        data-testid="button-residential-quote"
+                      >
+                        Request Quote
+                      </Button>
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground mt-4 text-center">
-                    *After government rebates. Quote varies by location and requirements.
+                    Based on 50% self-consumption, 50% export with 5kW limit. Aurora Energy rates. Quote varies by location and requirements.
                   </p>
                 </CardContent>
               </Card>

@@ -537,58 +537,6 @@ export default function FinancingService() {
         </div>
       </section>
 
-      {/* Real Examples */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-4">
-              Real Customer Examples
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See how different customers are saving money with various financing options.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {examples.map((example) => (
-              <Card key={example.scenario} className="hover-elevate">
-                <CardHeader>
-                  <CardTitle className="font-heading font-bold text-lg text-center">
-                    {example.scenario}
-                  </CardTitle>
-                  <p className="text-center text-muted-foreground text-sm">
-                    {example.systemSize}
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3 text-sm">
-                    <div className="flex justify-between">
-                      <span>Total System Cost:</span>
-                      <span className="font-medium">{example.totalCost}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>After Rebates:</span>
-                      <span className="font-medium text-primary">{example.afterRebate}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Monthly Payment:</span>
-                      <span className="font-medium">{example.monthlyPayment}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Monthly Saving:</span>
-                      <span className="font-medium text-green-600">{example.monthlySaving}</span>
-                    </div>
-                    <div className="flex justify-between border-t pt-3 font-bold">
-                      <span>Net Monthly Benefit:</span>
-                      <span className="text-green-600">{example.netBenefit}</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <section className="py-24 bg-white">

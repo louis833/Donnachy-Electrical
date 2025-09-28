@@ -18,8 +18,8 @@ export default function Footer() {
     },
     {
       icon: Mail,
-      label: 'scott@donnachyelectrical.com.au',
-      href: 'mailto:scott@donnachyelectrical.com.au',
+      label: 'louis@donnachyelectrical.com.au',
+      href: 'mailto:louis@donnachyelectrical.com.au',
       testId: 'link-footer-email'
     },
     {

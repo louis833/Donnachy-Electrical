@@ -27,7 +27,24 @@ export class NodemailerService implements EmailService {
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
   }
+
+  private isSmtpConfigured(): boolean {
+    return !!(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS);
+  }
+
   async sendContactNotification(contact: InsertContact): Promise<void> {
+    if (!this.isSmtpConfigured()) {
+      console.log('SMTP not configured - Email would be sent to louis@donnachyelectrical.com.au:', {
+        from: 'noreply@donnachyelectrical.com.au',
+        to: 'louis@donnachyelectrical.com.au',
+        subject: `New Solar Quote Request - ${contact.serviceType}`,
+        contactName: contact.name,
+        contactEmail: contact.email,
+        contactPhone: contact.phone,
+        message: contact.message
+      });
+      return;
+    }
     const serviceTypeLabels = {
       residential: 'Residential Installation',
       commercial: 'Commercial Installation', 
@@ -38,7 +55,7 @@ export class NodemailerService implements EmailService {
 
     const mailOptions = {
       from: process.env.SMTP_FROM || 'noreply@donnachyelectrical.com.au',
-      to: process.env.CONTACT_EMAIL || 'scott@donnachyelectrical.com.au',
+      to: process.env.CONTACT_EMAIL || 'louis@donnachyelectrical.com.au',
       subject: `New Solar Quote Request - ${serviceTypeLabels[contact.serviceType]}`,
       html: `
         <div style="max-width: 600px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif;">
@@ -69,8 +86,12 @@ export class NodemailerService implements EmailService {
   }
 
   async sendContactConfirmation(contact: InsertContact): Promise<void> {
+    if (!this.isSmtpConfigured()) {
+      console.log('SMTP not configured - Confirmation email would be sent to:', contact.email);
+      return;
+    }
     const mailOptions = {
-      from: process.env.SMTP_FROM || 'scott@donnachyelectrical.com.au',
+      from: process.env.SMTP_FROM || 'louis@donnachyelectrical.com.au',
       to: contact.email,
       subject: 'Thank you for your solar quote request - Donnachy Electrical',
       html: `
@@ -104,7 +125,7 @@ export class NodemailerService implements EmailService {
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #dee2e6; color: #6c757d; font-size: 12px;">
             <p><strong>Donnachy Electrical Pty Ltd</strong> | ABN 91 639 014 850</p>
             <p>20 Rene Rd, Summerhill TAS 7250 | Phone: 0409 820 219</p>
-            <p>Email: scott@donnachyelectrical.com.au</p>
+            <p>Email: louis@donnachyelectrical.com.au</p>
             <p>Servicing all of Tasmania's solar & battery needs</p>
           </div>
         </div>

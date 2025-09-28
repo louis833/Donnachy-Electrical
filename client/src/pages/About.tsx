@@ -320,7 +320,7 @@ export default function About() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail size={16} className="text-primary" />
-                    <span className="text-sm">scott@donnachyelectrical.com.au</span>
+                    <span className="text-sm">louis@donnachyelectrical.com.au</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <MapPin size={16} className="text-primary" />

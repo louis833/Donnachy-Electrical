@@ -4,7 +4,8 @@ import type { InsertContact } from '@shared/schema';
 const smtpConfig = {
   host: process.env.SMTP_HOST || 'localhost',
   port: parseInt(process.env.SMTP_PORT || '587'),
-  secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+  secure: false, // Use STARTTLS for port 587
+  requireTLS: true,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,

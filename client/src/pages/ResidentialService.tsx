@@ -198,7 +198,7 @@ export default function ResidentialService() {
               <div className="space-y-4 mb-8">
                 {[
                   "Reduce electricity bills by up to 90%",
-                  "Increase property value by $20,000+", 
+                  "Increase property value", 
                   "Government rebates and feed-in tariffs available",
                   "25-year warranty on premium panels",
                   "Professional monitoring and maintenance support",

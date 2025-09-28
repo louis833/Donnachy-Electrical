@@ -245,27 +245,33 @@ export default function CommercialService() {
                   <div className="space-y-4">
                     <div className="flex justify-between">
                       <span className="font-medium">System Size:</span>
-                      <span>50kW (150 panels)</span>
+                      <span>99kW (300 panels)</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="font-medium">Annual Generation:</span>
-                      <span>~75,000 kWh</span>
+                      <span>~155,000 kWh</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="font-medium">Annual Savings:</span>
-                      <span>$18,000-$25,000</span>
+                      <span>$32,000-$36,000</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="font-medium">Payback Period:</span>
-                      <span>3-5 years</span>
+                      <span>3-4 years</span>
                     </div>
-                    <div className="flex justify-between font-bold text-lg border-t pt-4">
-                      <span>System Investment:</span>
-                      <span>From $65,000*</span>
+                    <div className="border-t pt-4">
+                      <Button 
+                        className="w-full text-lg font-bold"
+                        size="lg"
+                        onClick={scrollToContact}
+                        data-testid="button-sample-quote"
+                      >
+                        Request Quote
+                      </Button>
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground mt-4 text-center">
-                    *After government incentives. Custom quote based on energy usage and site assessment.
+                    Based on 70% self-consumption, 30% export. Custom quote based on energy usage and site assessment.
                   </p>
                 </CardContent>
               </Card>

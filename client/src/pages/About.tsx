@@ -20,18 +20,16 @@ export default function About() {
     {
       icon: CheckCircle,
       title: "Proven Expertise",
-      description: "CEC-accredited designers and installers with 15+ years of experience and 1,200+ successful installations."
+      description: "CEC-accredited designers and installers dedicated to delivering professional solar solutions for Tasmania."
     }
   ];
 
   const milestones = [
-    { year: "2008", event: "Donnachy Electrical founded by Scott Donnachy" },
-    { year: "2010", event: "First solar installation completed in Tasmania" },
+    { year: "2010", event: "First solar installation completed, beginning our journey in renewable energy" },
     { year: "2015", event: "Achieved CEC accreditation for solar design and installation" },
-    { year: "2018", event: "Expanded to commercial solar installations" },
+    { year: "2018", event: "Expanded services to include commercial solar installations" },
     { year: "2020", event: "Added battery storage solutions to service offering" },
-    { year: "2023", event: "Reached milestone of 1,200+ panels installed" },
-    { year: "2024", event: "Launched comprehensive maintenance programs" }
+    { year: "2024", event: "Launched comprehensive maintenance and support programs" }
   ];
 
   const scrollToContact = () => {
@@ -62,8 +60,8 @@ export default function About() {
             </h1>
             
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              For over 15 years, we've been Tasmania's trusted partner for solar and battery solutions, 
-              helping homes and businesses harness clean, affordable energy.
+              Since 2010, we've been helping Tasmanian homes and businesses harness clean, 
+              affordable solar energy with professional installation and ongoing support.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -100,28 +98,27 @@ export default function About() {
               
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Donnachy Electrical was founded by Scott Donnachy in 2008 with a simple mission: 
-                  to help Tasmanians reduce their energy costs while contributing to a cleaner environment. 
-                  What started as a traditional electrical contracting business quickly evolved as we 
-                  recognized the enormous potential of solar energy in Tasmania.
+                  Donnachy Electrical was founded by Scott Donnachy as a traditional electrical 
+                  contracting business serving Tasmania. In 2010, we completed our first solar 
+                  installation, marking the beginning of our journey into renewable energy.
                 </p>
                 
                 <p>
-                  Over the years, we've grown from a small local business to one of Tasmania's most 
-                  trusted solar installers. We've completed over 1,200 residential and commercial 
-                  installations across the state, from Hobart to Devonport, and everywhere in between.
+                  Since that first installation, we've focused exclusively on helping Tasmanians 
+                  harness solar energy. We've worked on residential and commercial projects across 
+                  the state, from Hobart to Devonport, always with the same commitment to quality 
+                  and customer care.
                 </p>
 
                 <p>
-                  Our success is built on a foundation of technical expertise, genuine customer care, 
-                  and an unwavering commitment to quality. Every team member is CEC-accredited, and 
-                  we maintain the highest standards for both safety and performance.
+                  Our approach is built on technical expertise, genuine customer relationships, 
+                  and an unwavering commitment to quality workmanship. We're CEC-accredited and 
+                  maintain high standards for both safety and performance on every project.
                 </p>
 
                 <p>
-                  Today, as energy prices continue to rise and climate concerns grow, we're more 
-                  passionate than ever about helping Tasmanians achieve energy independence through 
-                  solar power and battery storage solutions.
+                  As energy prices continue to rise, we remain dedicated to helping Tasmanians 
+                  achieve energy independence through solar power and battery storage solutions.
                 </p>
               </div>
 
@@ -147,23 +144,23 @@ export default function About() {
             <div className="space-y-6">
               <Card className="p-6 bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
                 <div className="text-center">
-                  <h3 className="font-heading font-bold text-xl mb-4">By the Numbers</h3>
+                  <h3 className="font-heading font-bold text-xl mb-4">Our Commitment</h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <div className="text-3xl font-bold text-primary">15+</div>
-                      <div className="text-sm text-muted-foreground">Years Experience</div>
+                      <div className="text-3xl font-bold text-primary">2010</div>
+                      <div className="text-sm text-muted-foreground">First Installation</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold text-primary">1,200+</div>
-                      <div className="text-sm text-muted-foreground">Panels Installed</div>
+                      <div className="text-3xl font-bold text-primary">CEC</div>
+                      <div className="text-sm text-muted-foreground">Accredited</div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold text-primary">TAS</div>
+                      <div className="text-sm text-muted-foreground">Statewide Service</div>
                     </div>
                     <div>
                       <div className="text-3xl font-bold text-primary">100%</div>
-                      <div className="text-sm text-muted-foreground">Tasmania Coverage</div>
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-primary">5★</div>
-                      <div className="text-sm text-muted-foreground">Customer Rating</div>
+                      <div className="text-sm text-muted-foreground">Quality Focus</div>
                     </div>
                   </div>
                 </div>
@@ -270,8 +267,8 @@ export default function About() {
               
               <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
                 <p>
-                  As the founder and principal of Donnachy Electrical, Scott brings over 15 years 
-                  of electrical contracting experience to every solar project. His journey into 
+                  As the founder and principal of Donnachy Electrical, Scott brings extensive 
+                  electrical contracting experience to every solar project. His journey into 
                   renewable energy began with a personal interest in sustainability and grew into 
                   a passion for helping others achieve energy independence.
                 </p>
@@ -279,7 +276,7 @@ export default function About() {
                 <p>
                   Scott holds CEC accreditation as both a solar designer and installer, ensuring 
                   every system is expertly designed and professionally installed. He personally 
-                  oversees all projects and is committed to delivering exceptional results for 
+                  oversees all projects and is committed to delivering quality results for 
                   every customer.
                 </p>
 
@@ -294,7 +291,7 @@ export default function About() {
                 {[
                   "CEC Accredited Solar Designer & Installer",
                   "Licensed Electrical Contractor (Tasmania)",
-                  "15+ Years Electrical Industry Experience",
+                  "Experienced Electrical Professional",
                   "Specialist in Residential & Commercial Solar"
                 ].map((qualification) => (
                   <div key={qualification} className="flex items-center gap-3">

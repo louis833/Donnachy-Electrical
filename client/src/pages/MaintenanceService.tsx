@@ -196,69 +196,6 @@ export default function MaintenanceService() {
         </div>
       </section>
 
-      {/* Maintenance Plans */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-4">
-              Maintenance Plans
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Choose the right maintenance plan to protect your solar investment and maximize returns.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {plans.map((plan) => (
-              <Card 
-                key={plan.name} 
-                className={`relative hover-elevate ${plan.recommended ? 'border-primary border-2' : ''}`}
-              >
-                {plan.recommended && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                
-                <CardHeader className="text-center">
-                  <CardTitle className="font-heading font-bold text-xl mb-2">
-                    {plan.name}
-                  </CardTitle>
-                  <div className="text-3xl font-bold text-primary mb-2">
-                    {plan.price}
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Per residential system
-                  </p>
-                </CardHeader>
-                
-                <CardContent>
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2">
-                        <CheckCircle className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Button 
-                    className="w-full"
-                    variant={plan.recommended ? "default" : "outline"}
-                    onClick={scrollToContact}
-                    data-testid={`button-plan-${plan.name.toLowerCase().replace(' ', '-')}`}
-                  >
-                    Choose {plan.name}
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Common Issues */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">

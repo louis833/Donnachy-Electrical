@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import logo from "@assets/Gemini_Generated_Image_9imgn09imgn09img_1759615989471.png";
 
 export default function Header() {
   const scrollToContact = () => {
@@ -21,9 +22,12 @@ export default function Header() {
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <h1 className="font-heading font-extrabold text-xl md:text-2xl text-black">
-              Donnachy Electrical
-            </h1>
+            <img 
+              src={logo} 
+              alt="Donnachy Electrical" 
+              className="h-10 md:h-12 w-auto"
+              data-testid="logo-header"
+            />
           </motion.div>
 
           {/* Navigation */}

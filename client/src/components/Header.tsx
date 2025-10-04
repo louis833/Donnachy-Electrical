@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import logo from "@assets/Gemini_Generated_Image_9imgn09imgn09img_1759615989471.png";
+import logo from "@assets/donnachy_logo_rect_1759617851454.png";
 
 export default function Header() {
   const scrollToContact = () => {

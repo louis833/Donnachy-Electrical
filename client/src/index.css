@@ -124,7 +124,7 @@
 
 @layer base {
   :root {
-    color-scheme: light only;
+    color-scheme: light;
   }
 
   * {
@@ -133,6 +133,18 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  /* Force light mode even when dark mode is preferred */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: light !important;
+    }
+    
+    html, body {
+      background-color: #ffffff !important;
+      color: #0a0a0a !important;
+    }
   }
 }
 

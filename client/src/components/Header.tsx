@@ -25,7 +25,7 @@ export default function Header() {
             <img 
               src={logo} 
               alt="Donnachy Electrical" 
-              className="h-10 md:h-12 w-auto"
+              className="h-[200px] md:h-[240px] w-auto"
               data-testid="logo-header"
             />
           </motion.div>

@@ -222,40 +222,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-4">
-              Our Journey
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Key milestones in our mission to bring clean energy to Tasmania.
-            </p>
-          </div>
-
-          <div className="space-y-8">
-            {milestones.map((milestone, index) => (
-              <div key={milestone.year} className="flex items-center gap-6">
-                <div className="flex-shrink-0 w-20 text-right">
-                  <div className="bg-primary text-white px-3 py-1 rounded-full text-sm font-bold">
-                    {milestone.year}
-                  </div>
-                </div>
-                <div className="relative flex-1">
-                  <div className="bg-white p-4 rounded-lg shadow-sm border hover-elevate">
-                    <p className="text-muted-foreground">{milestone.event}</p>
-                  </div>
-                  {index < milestones.length - 1 && (
-                    <div className="absolute left-[-32px] top-12 w-0.5 h-8 bg-gray-300"></div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Team Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">

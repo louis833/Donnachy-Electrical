@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import logo from "@assets/donnachy_logo_rect_1759617851454.png";
+import logo from "@assets/donnachy_logo_hero (1)_1759617981476.png";
 
 export default function Header() {
   const scrollToContact = () => {
@@ -25,7 +25,7 @@ export default function Header() {
             <img 
               src={logo} 
               alt="Donnachy Electrical" 
-              className="h-[200px] md:h-[240px] w-auto"
+              className="h-12 md:h-16 w-auto"
               data-testid="logo-header"
             />
           </motion.div>

@@ -58,7 +58,7 @@ export default function Hero() {
             <p className="text-lg md:text-2xl text-white/90 mb-6 md:mb-8 font-medium">
               Trusted by homeowners and businesses for over 15 years.
               <span className="block mt-2 text-primary font-semibold">
-                Save up to 30% on energy bills
+                Save up to 90% on energy bills*
               </span>
             </p>
           </ScrollReveal>

@@ -283,7 +283,7 @@ export default function ResidentialService() {
             Ready to Go Solar?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Join over 1,200 satisfied customers who have made the switch to clean, affordable solar energy.
+            Join our many satisfied customers who have made the switch to clean, affordable solar energy.
           </p>
           <Button 
             size="lg"

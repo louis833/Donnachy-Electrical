@@ -120,8 +120,8 @@ export default function Contact() {
       id: 'email',
       icon: Mail,
       label: 'Email',
-      value: 'louis@donnachyelectrical.com.au',
-      link: 'mailto:louis@donnachyelectrical.com.au',
+      value: 'scott@donnachyelectrical.com.au',
+      link: 'mailto:scott@donnachyelectrical.com.au',
     },
     {
       id: 'address',

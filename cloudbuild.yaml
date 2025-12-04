@@ -1,15 +1,15 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/donnachy-electrical-website', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/donnachy-electrical', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/donnachy-electrical-website']
+    args: ['push', 'gcr.io/$PROJECT_ID/donnachy-electrical']
   - name: 'gcr.io/google.com/cloudsdktool/gcloud'
     args:
       - 'run'
       - 'deploy'
-      - 'donnachy-electrical-website'
+      - 'donnachy-electrical'
       - '--image'
-      - 'gcr.io/$PROJECT_ID/donnachy-electrical-website'
+      - 'gcr.io/$PROJECT_ID/donnachy-electrical'
       - '--platform'
       - 'managed'
       - '--region'

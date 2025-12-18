@@ -1,8 +1,13 @@
 # Overview
 
-This is a professional marketing website for Donnachy Electrical, a solar and battery installation company based in Tasmania, Australia. The website is built as a modern React application with an Express backend, designed for lead generation and customer engagement. It features a complete contact form system with email notifications, responsive design optimized for all devices, and comprehensive SEO implementation.
+This is a professional marketing website for Donnachy Electrical, a multi-service electrical company based in Tasmania, Australia. The website is built as a modern React application with an Express backend, designed for lead generation and customer engagement. It features a complete contact form system with Gmail API email notifications, responsive design optimized for all devices, and comprehensive SEO implementation.
 
-The site showcases Donnachy Electrical's services including residential and commercial solar installations, maintenance and support, and financing options. It emphasizes their CEC accreditation and 15+ years of experience to build trust with potential customers.
+The site showcases Donnachy Electrical's three main service categories:
+1. **General Electrical** - New installations, repairs, upgrades, switchboard work, safety inspections
+2. **Heat Pumps & Ducted Systems** - Heat pump installation, ducted heating/cooling, HVAC maintenance
+3. **Solar & Batteries** - Solar panel installation, battery storage, system monitoring
+
+It emphasizes their CEC accreditation and 15+ years of experience to build trust with potential customers.
 
 # User Preferences
 

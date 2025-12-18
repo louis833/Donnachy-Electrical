@@ -2,7 +2,7 @@ import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
 import rateLimit from "express-rate-limit";
 import { storage } from "./storage";
-import { emailService } from "./email";
+import { gmailService } from "./gmail-service";
 import { insertContactSchema } from "@shared/schema";
 import { z } from "zod";
 
@@ -35,7 +35,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Send notification email to business owner
       try {
-        await emailService.sendContactNotification(validatedData);
+        await gmailService.sendContactNotification(validatedData);
         console.log("Notification email sent successfully");
       } catch (emailError) {
         console.error("Failed to send notification email:", emailError);
@@ -44,7 +44,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Send confirmation email to customer
       try {
-        await emailService.sendContactConfirmation(validatedData);
+        await gmailService.sendContactConfirmation(validatedData);
         console.log("Confirmation email sent successfully");
       } catch (emailError) {
         console.error("Failed to send confirmation email:", emailError);

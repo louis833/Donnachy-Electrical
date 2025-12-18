@@ -245,10 +245,10 @@ export default function Contact() {
                       <SelectValue placeholder="Select service type" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="residential">Residential Installation</SelectItem>
-                      <SelectItem value="commercial">Commercial Installation</SelectItem>
-                      <SelectItem value="maintenance">Maintenance & Support</SelectItem>
-                      <SelectItem value="financing">Financing Options</SelectItem>
+                      <SelectItem value="electrical">General Electrical</SelectItem>
+                      <SelectItem value="heat-pumps">Heat Pumps & Ducted Systems</SelectItem>
+                      <SelectItem value="solar">Solar & Batteries</SelectItem>
+                      <SelectItem value="maintenance">Maintenance & Repairs</SelectItem>
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>

@@ -31,7 +31,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-24">
         <div className="max-w-3xl">
-          {/* CEC Badge */}
+          {/* Licensed Badge */}
           <ScrollReveal direction="fade" delay={0.2}>
             <div className="mb-6">
               <Badge 
@@ -40,8 +40,8 @@ export default function Hero() {
                 data-testid="badge-cec"
               >
                 <CheckCircle size={16} className="mr-2" />
-                <span className="hidden sm:inline">CEC Accredited Solar & Battery Installer & Designer</span>
-                <span className="sm:hidden">CEC Accredited Installer</span>
+                <span className="hidden sm:inline">Licensed Electrician & CEC Accredited Installer</span>
+                <span className="sm:hidden">Licensed Electrician</span>
               </Badge>
             </div>
           </ScrollReveal>
@@ -49,16 +49,16 @@ export default function Hero() {
           {/* Main Headline */}
           <ScrollReveal direction="up" delay={0.4}>
             <h1 className="font-heading font-extrabold text-3xl md:text-6xl text-white mb-4 md:mb-6 leading-tight">
-              Reliable Solar Panel Installation for Homes & Businesses
+              Your Complete Electrical, Heating & Solar Specialists
             </h1>
           </ScrollReveal>
 
           {/* Subtext */}
           <ScrollReveal direction="up" delay={0.6}>
             <p className="text-lg md:text-2xl text-white/90 mb-6 md:mb-8 font-medium">
-              Trusted by homeowners and businesses for over 15 years.
+              Electrical work, heat pumps, ducted systems & solar solutions.
               <span className="block mt-2 text-primary font-semibold">
-                Save up to 90% on energy bills*
+                Trusted across Tasmania for 15+ years
               </span>
             </p>
           </ScrollReveal>
@@ -113,7 +113,7 @@ export default function Hero() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <CheckCircle size={20} className="text-primary" />
-                <span className="font-medium">1,200+ Panels Installed</span>
+                <span className="font-medium">Licensed & Insured</span>
               </motion.div>
               <motion.div 
                 className="flex items-center gap-2"

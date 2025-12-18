@@ -46,11 +46,11 @@ export class NodemailerService implements EmailService {
       });
       return;
     }
-    const serviceTypeLabels = {
-      residential: 'Residential Installation',
-      commercial: 'Commercial Installation', 
-      maintenance: 'Maintenance & Support',
-      financing: 'Financing Options',
+    const serviceTypeLabels: Record<string, string> = {
+      electrical: 'General Electrical',
+      'heat-pumps': 'Heat Pumps & Ducted Systems',
+      solar: 'Solar & Batteries',
+      maintenance: 'Maintenance & Repairs',
       other: 'Other'
     };
 

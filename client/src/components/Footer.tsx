@@ -1,12 +1,15 @@
 import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   const quickLinks = [
-    { label: 'Services', href: '#services', testId: 'link-footer-services' },
-    { label: 'About Us', href: '#about', testId: 'link-footer-about' },
-    { label: 'Contact', href: '#contact', testId: 'link-footer-contact' },
+    { label: 'Electrical', href: '/electrical', testId: 'link-footer-electrical', isRoute: true },
+    { label: 'Heat Pumps', href: '/heat-pumps', testId: 'link-footer-heatpumps', isRoute: true },
+    { label: 'Solar', href: '/solar', testId: 'link-footer-solar', isRoute: true },
+    { label: 'About Us', href: '/about', testId: 'link-footer-about', isRoute: true },
+    { label: 'Contact', href: '#contact', testId: 'link-footer-contact', isRoute: false },
   ];
 
   const contactLinks = [
@@ -55,18 +58,18 @@ export default function Footer() {
               Donnachy Electrical
             </h3>
             <p className="text-gray-300 mb-4 text-lg">
-              Solar & Battery Specialists
+              Electrical, Heating & Solar Specialists
             </p>
             <p className="text-gray-400 leading-relaxed">
-              CEC accredited solar & battery installer and designer serving all of Tasmania. 
-              15+ years' experience in residential and commercial solar installations.
+              Licensed electrician and CEC accredited installer serving all of Tasmania. 
+              15+ years' experience in electrical work, heat pumps, ducted systems, and solar installations.
             </p>
             
-            {/* CEC Accreditation */}
+            {/* Credentials */}
             <div className="mt-6 inline-flex items-center gap-2 bg-gray-800 px-4 py-2 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full"></div>
               <span className="text-sm font-medium text-gray-200">
-                Clean Energy Council Accredited
+                Licensed & CEC Accredited
               </span>
             </div>
           </div>
@@ -77,13 +80,23 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a 
-                    href={link.href}
-                    className="text-gray-400 hover:text-primary transition-colors"
-                    data-testid={link.testId}
-                  >
-                    {link.label}
-                  </a>
+                  {link.isRoute ? (
+                    <Link 
+                      href={link.href}
+                      className="text-gray-400 hover:text-primary transition-colors"
+                      data-testid={link.testId}
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a 
+                      href={link.href}
+                      className="text-gray-400 hover:text-primary transition-colors"
+                      data-testid={link.testId}
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

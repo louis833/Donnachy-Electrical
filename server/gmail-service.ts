@@ -78,10 +78,10 @@ export class GmailService implements EmailService {
       const gmailClient = await getUncachableGmailClient();
       
       const serviceTypeLabels: Record<string, string> = {
-        residential: 'Residential Installation',
-        commercial: 'Commercial Installation', 
-        maintenance: 'Maintenance & Support',
-        financing: 'Financing Options',
+        electrical: 'General Electrical',
+        'heat-pumps': 'Heat Pumps & Ducted Systems',
+        solar: 'Solar & Batteries',
+        maintenance: 'Maintenance & Repairs',
         other: 'Other'
       };
 

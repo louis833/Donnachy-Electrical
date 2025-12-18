@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import logo from "@assets/donnachy_logo_hero (1)_1759617981476.png";
 
 export default function Header() {
@@ -22,37 +23,53 @@ export default function Header() {
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <img 
-              src={logo} 
-              alt="Donnachy Electrical" 
-              className="h-12 md:h-16 w-auto"
-              data-testid="logo-header"
-            />
+            <Link href="/">
+              <img 
+                src={logo} 
+                alt="Donnachy Electrical" 
+                className="h-12 md:h-16 w-auto cursor-pointer"
+                data-testid="logo-header"
+              />
+            </Link>
           </motion.div>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a 
-              href="#services" 
+          <nav className="hidden md:flex items-center space-x-6">
+            <Link 
+              href="/electrical" 
               className="text-foreground hover:text-primary font-medium transition-colors"
-              data-testid="link-services"
+              data-testid="link-electrical"
             >
-              Services
-            </a>
-            <a 
-              href="#about" 
+              Electrical
+            </Link>
+            <Link 
+              href="/heat-pumps" 
+              className="text-foreground hover:text-primary font-medium transition-colors"
+              data-testid="link-heatpumps"
+            >
+              Heat Pumps
+            </Link>
+            <Link 
+              href="/solar" 
+              className="text-foreground hover:text-primary font-medium transition-colors"
+              data-testid="link-solar"
+            >
+              Solar
+            </Link>
+            <Link 
+              href="/about" 
               className="text-foreground hover:text-primary font-medium transition-colors"
               data-testid="link-about"
             >
               About
-            </a>
-            <a 
-              href="#contact" 
+            </Link>
+            <button 
+              onClick={scrollToContact}
               className="text-foreground hover:text-primary font-medium transition-colors"
               data-testid="link-contact"
             >
               Contact
-            </a>
+            </button>
           </nav>
 
           {/* CTA Button */}

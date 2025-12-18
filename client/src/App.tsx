@@ -5,10 +5,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
-import ResidentialService from "@/pages/ResidentialService";
-import CommercialService from "@/pages/CommercialService";
-import MaintenanceService from "@/pages/MaintenanceService";
-import FinancingService from "@/pages/FinancingService";
+import ElectricalService from "@/pages/ElectricalService";
+import HeatPumpsService from "@/pages/HeatPumpsService";
+import SolarService from "@/pages/SolarService";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -16,10 +15,9 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
-      <Route path="/residential" component={ResidentialService} />
-      <Route path="/commercial" component={CommercialService} />
-      <Route path="/maintenance" component={MaintenanceService} />
-      <Route path="/financing" component={FinancingService} />
+      <Route path="/electrical" component={ElectricalService} />
+      <Route path="/heat-pumps" component={HeatPumpsService} />
+      <Route path="/solar" component={SolarService} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>

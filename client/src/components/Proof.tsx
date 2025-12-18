@@ -11,9 +11,9 @@ const stats = [
     icon: CheckCircle,
   },
   {
-    id: 'panels',
-    number: '1,200+',
-    label: 'Panels Installed',
+    id: 'projects',
+    number: '1,000+',
+    label: 'Projects Completed',
     icon: CheckCircle,
   },
   {
@@ -25,9 +25,9 @@ const stats = [
 ];
 
 const testimonial = {
-  text: "They made switching to solar simple and stress-free. My bills dropped fast.",
-  author: "Sarah L.",
-  location: "Hobart, TAS",
+  text: "Professional, reliable, and excellent workmanship. Highly recommend for any electrical or solar work.",
+  author: "Mark T.",
+  location: "Launceston, TAS",
   rating: 5,
 };
 
@@ -39,11 +39,11 @@ export default function Proof() {
         <ScrollReveal direction="up" threshold={0.2}>
           <div className="text-center mb-16">
             <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-4">
-              Powering Homes & Businesses Across Tasmania
+              Trusted Across Tasmania
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Our track record speaks for itself. Join hundreds of satisfied customers 
-              who've made the switch to clean, reliable solar energy.
+              who trust us for their electrical, heating, and solar needs.
             </p>
           </div>
         </ScrollReveal>

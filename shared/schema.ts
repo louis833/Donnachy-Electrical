@@ -31,7 +31,7 @@ export const insertContactSchema = createInsertSchema(contacts).omit({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Valid email is required"),
   phone: z.string().optional(),
-  serviceType: z.enum(["residential", "commercial", "maintenance", "financing", "other"], {
+  serviceType: z.enum(["electrical", "heat-pumps", "solar", "maintenance", "other"], {
     required_error: "Service type is required",
   }),
   message: z.string().min(10, "Message must be at least 10 characters"),

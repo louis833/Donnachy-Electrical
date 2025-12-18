@@ -12,8 +12,8 @@ export default function Footer() {
   const contactLinks = [
     {
       icon: Phone,
-      label: '0409 820 219',
-      href: 'tel:+61409820219',
+      label: '03 6159 6392',
+      href: 'tel:+61361596392',
       testId: 'link-footer-phone'
     },
     {

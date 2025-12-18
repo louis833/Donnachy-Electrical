@@ -112,9 +112,9 @@ export default function Contact() {
     {
       id: 'phone',
       icon: Phone,
-      label: 'Phone',
-      value: '0409 820 219',
-      link: 'tel:+61409820219',
+      label: 'Ai Receptionist',
+      value: '03 6159 6392',
+      link: 'tel:+61361596392',
     },
     {
       id: 'email',
@@ -134,7 +134,7 @@ export default function Contact() {
       id: 'hours',
       icon: Clock,
       label: 'Business Hours',
-      value: 'Mon-Fri: 8:00 AM - 5:00 PM',
+      value: 'Contact 24/7',
       link: null,
     },
   ];

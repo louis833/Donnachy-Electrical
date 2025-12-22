@@ -43,7 +43,7 @@ export default function Contact() {
       ...prev,
       [field]: value
     }));
-    
+
     // Clear field error and status messages when user starts typing
     if (fieldErrors[field]) {
       setFieldErrors(prev => {
@@ -51,7 +51,7 @@ export default function Contact() {
         return rest;
       });
     }
-    
+
     // Reset status to hide stale success/error messages
     if (submitStatus !== 'idle') {
       setSubmitStatus('idle');
@@ -64,7 +64,7 @@ export default function Contact() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
     setFieldErrors({});
-    
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -73,19 +73,19 @@ export default function Contact() {
         },
         body: JSON.stringify(formData),
       });
-      
+
       const result = await response.json() as ApiSuccess | ApiError;
-      
+
       if (result.success) {
         setSubmitStatus('success');
         setStatusMessage(result.message);
-        
+
         // Track successful form submission
         trackFormSubmit('contact_form', {
           service_type: formData.serviceType,
           has_phone: !!formData.phone,
         });
-        
+
         // Clear form on success
         setFormData({
           name: '',
@@ -97,7 +97,7 @@ export default function Contact() {
       } else {
         setSubmitStatus('error');
         setStatusMessage(result.message);
-        
+
         // Set field-specific errors if provided
         if (result.errors) {
           const errors: Record<string, string> = {};
@@ -156,7 +156,7 @@ export default function Contact() {
             Get Your Free Solar Quote
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to start saving with solar? Contact us today for a personalized quote 
+            Ready to start saving with solar? Contact us today for a personalized quote
             and consultation. We're here to help you make the switch to clean energy.
           </p>
         </div>
@@ -179,7 +179,7 @@ export default function Contact() {
                   </AlertDescription>
                 </Alert>
               )}
-              
+
               {submitStatus === 'error' && (
                 <Alert variant="destructive" className="mb-6">
                   <AlertCircle className="h-4 w-4" />
@@ -194,6 +194,8 @@ export default function Contact() {
                   <Label htmlFor="name">Full Name *</Label>
                   <Input
                     id="name"
+                    name="name"
+                    autoComplete="name"
                     type="text"
                     value={formData.name}
                     onChange={(e) => handleInputChange('name', e.target.value)}
@@ -211,6 +213,8 @@ export default function Contact() {
                   <Label htmlFor="email">Email Address *</Label>
                   <Input
                     id="email"
+                    name="email"
+                    autoComplete="email"
                     type="email"
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
@@ -228,6 +232,8 @@ export default function Contact() {
                   <Label htmlFor="phone">Phone Number</Label>
                   <Input
                     id="phone"
+                    name="phone"
+                    autoComplete="tel"
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
@@ -242,11 +248,13 @@ export default function Contact() {
 
                 <div className="space-y-2">
                   <Label htmlFor="serviceType">Service Type *</Label>
-                  <Select 
-                    value={formData.serviceType} 
+                  <Select
+                    value={formData.serviceType}
                     onValueChange={(value) => handleInputChange('serviceType', value)}
+                    name="serviceType"
                   >
-                    <SelectTrigger 
+                    <SelectTrigger
+                      id="serviceType"
                       data-testid="select-service"
                       className={fieldErrors.serviceType ? "border-red-500 focus-visible:ring-red-500" : ""}
                     >
@@ -269,6 +277,7 @@ export default function Contact() {
                   <Label htmlFor="message">Message *</Label>
                   <Textarea
                     id="message"
+                    name="message"
                     value={formData.message}
                     onChange={(e) => handleInputChange('message', e.target.value)}
                     required
@@ -282,9 +291,9 @@ export default function Contact() {
                   )}
                 </div>
 
-                <Button 
-                  type="submit" 
-                  size="lg" 
+                <Button
+                  type="submit"
+                  size="lg"
                   className="w-full text-lg"
                   disabled={isSubmitting}
                   data-testid="button-submit"
@@ -314,7 +323,7 @@ export default function Contact() {
                         {item.label}
                       </div>
                       {item.link ? (
-                        <a 
+                        <a
                           href={item.link}
                           className="text-muted-foreground hover:text-primary transition-colors break-all sm:break-normal"
                           data-testid={`link-${item.id}`}

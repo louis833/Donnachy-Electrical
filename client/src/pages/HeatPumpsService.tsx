@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { ThermometerSun, Wind, Snowflake, Flame, Wrench, CheckCircle, ArrowLeft } from "lucide-react";
 import { useLocation } from "wouter";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
+import { usePageTracking } from "@/hooks/usePageTracking";
 
 const heatPumpServices = [
   {
@@ -49,6 +50,7 @@ const benefits = [
 
 export default function HeatPumpsService() {
   const [, navigate] = useLocation();
+  usePageTracking('Heat Pumps');
 
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });

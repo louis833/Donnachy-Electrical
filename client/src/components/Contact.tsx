@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Phone, Mail, MapPin, Clock, CheckCircle, AlertCircle } from "lucide-react";
+import { trackFormSubmit, trackPhoneClick, trackEmailClick } from "@/lib/analytics";
 
 interface ApiError {
   success: false;
@@ -78,6 +79,13 @@ export default function Contact() {
       if (result.success) {
         setSubmitStatus('success');
         setStatusMessage(result.message);
+        
+        // Track successful form submission
+        trackFormSubmit('contact_form', {
+          service_type: formData.serviceType,
+          has_phone: !!formData.phone,
+        });
+        
         // Clear form on success
         setFormData({
           name: '',
@@ -310,6 +318,13 @@ export default function Contact() {
                           href={item.link}
                           className="text-muted-foreground hover:text-primary transition-colors break-all sm:break-normal"
                           data-testid={`link-${item.id}`}
+                          onClick={() => {
+                            if (item.id === 'phone') {
+                              trackPhoneClick(item.value, 'contact_section');
+                            } else if (item.id === 'email') {
+                              trackEmailClick(item.value, 'contact_section');
+                            }
+                          }}
                         >
                           {item.value}
                         </a>

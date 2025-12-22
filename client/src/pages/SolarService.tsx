@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Sun, Battery, Home, Building, Wrench, Monitor, CheckCircle, ArrowLeft } from "lucide-react";
 import { useLocation } from "wouter";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
+import { usePageTracking } from "@/hooks/usePageTracking";
 
 const solarServices = [
   {
@@ -49,6 +50,7 @@ const stats = [
 
 export default function SolarService() {
   const [, navigate] = useLocation();
+  usePageTracking('Solar');
 
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });

@@ -6,6 +6,7 @@ import { useParallax } from "@/hooks/useScrollAnimation";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { motion } from "framer-motion";
 import heroImage from "@assets/generated_images/Solar_panels_on_residential_roof_4e7740b1.png";
+import { trackCTAClick } from "@/lib/analytics";
 
 export default function Hero() {
   const [, navigate] = useLocation();
@@ -74,7 +75,10 @@ export default function Hero() {
                   size="lg" 
                   className="text-base md:text-lg px-6 md:px-8 py-3 md:py-4"
                   data-testid="button-hero-quote"
-                  onClick={scrollToContact}
+                  onClick={() => {
+                    trackCTAClick('Request a Free Quote', 'hero', 'contact_form');
+                    scrollToContact();
+                  }}
                 >
                   Request a Free Quote
                 </Button>
@@ -88,7 +92,10 @@ export default function Hero() {
                   size="lg" 
                   className="text-base md:text-lg px-6 md:px-8 py-3 md:py-4 bg-white/10 text-white border-white/30 backdrop-blur-sm hover:bg-white/20"
                   data-testid="button-hero-learn"
-                  onClick={() => navigate('/about')}
+                  onClick={() => {
+                    trackCTAClick('Learn More', 'hero', 'about_page');
+                    navigate('/about');
+                  }}
                 >
                   Learn More
                 </Button>
@@ -134,7 +141,10 @@ export default function Hero() {
           size="lg" 
           className="w-full text-lg"
           data-testid="button-mobile-quote"
-          onClick={scrollToContact}
+          onClick={() => {
+            trackCTAClick('Request Free Quote', 'mobile_sticky', 'contact_form');
+            scrollToContact();
+          }}
         >
           Request Free Quote
         </Button>

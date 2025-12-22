@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Zap, Shield, Wrench, CheckCircle, Home, Building, ArrowLeft } from "lucide-react";
 import { useLocation } from "wouter";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
+import { usePageTracking } from "@/hooks/usePageTracking";
 
 const electricalServices = [
   {
@@ -43,6 +44,7 @@ const electricalServices = [
 
 export default function ElectricalService() {
   const [, navigate] = useLocation();
+  usePageTracking('Electrical');
 
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });

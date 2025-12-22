@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import logo from "@assets/donnachy_logo_hero (1)_1759617981476.png";
+import { trackCTAClick } from "@/lib/analytics";
 
 export default function Header() {
   const scrollToContact = () => {
@@ -81,7 +82,10 @@ export default function Header() {
             <Button 
               size="default"
               data-testid="button-quote"
-              onClick={scrollToContact}
+              onClick={() => {
+                trackCTAClick('Request Free Quote', 'header', 'contact_form');
+                scrollToContact();
+              }}
             >
               <span className="hidden sm:inline">Request Free Quote</span>
               <span className="sm:hidden">Quote</span>

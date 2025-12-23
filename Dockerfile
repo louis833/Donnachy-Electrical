@@ -20,6 +20,9 @@ COPY --from=builder /app/package.json ./
 ENV NODE_ENV=production
 ENV PORT=8080
 
+RUN addgroup -S nodejs && adduser -S nodejs -G nodejs
+USER nodejs
+
 EXPOSE 8080
 
 CMD ["npm", "start"]

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ThermometerSun, Wind, Snowflake, Flame, Wrench, CheckCircle, ArrowLeft } from "lucide-react";
 import { useLocation } from "wouter";
+import SEO from "../components/SEO";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 import { usePageTracking } from "@/hooks/usePageTracking";
 
@@ -58,14 +59,18 @@ export default function HeatPumpsService() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Heat Pumps & Ducted Systems | Donnachy Electrical"
+        description="Energy-efficient heating and cooling solutions. Expert installation of heat pumps and ducted systems for year-round comfort."
+      />
       <Header />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-900 to-blue-800 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               className="text-white/80 mb-6"
               onClick={() => navigate('/')}
               data-testid="button-back-home"
@@ -73,7 +78,7 @@ export default function HeatPumpsService() {
               <ArrowLeft size={16} className="mr-2" />
               Back to Home
             </Button>
-            
+
             <ScrollReveal direction="up">
               <div className="flex items-center gap-3 mb-4">
                 <div className="bg-primary p-3 rounded-lg">
@@ -83,18 +88,18 @@ export default function HeatPumpsService() {
                   Heating & Cooling Specialists
                 </Badge>
               </div>
-              
+
               <h1 className="font-heading font-extrabold text-4xl md:text-5xl mb-6">
                 Heat Pumps & Ducted Systems
               </h1>
-              
+
               <p className="text-xl text-white/80 max-w-2xl mb-8">
-                Energy-efficient heating and cooling solutions for Tasmania's climate. 
+                Energy-efficient heating and cooling solutions for Tasmania's climate.
                 Stay comfortable all year with our expert installation and service.
               </p>
-              
-              <Button 
-                size="lg" 
+
+              <Button
+                size="lg"
                 onClick={scrollToContact}
                 data-testid="button-heatpumps-quote"
               >
@@ -190,7 +195,7 @@ export default function HeatPumpsService() {
                   ))}
                 </div>
               </ScrollReveal>
-              
+
               <ScrollReveal direction="right">
                 <Card className="bg-blue-50 border-blue-100">
                   <CardContent className="p-8">
@@ -198,8 +203,8 @@ export default function HeatPumpsService() {
                       Perfect for Tasmania's Climate
                     </h3>
                     <p className="text-muted-foreground mb-6">
-                      Heat pumps work efficiently even in cold temperatures, making them 
-                      ideal for Tasmania's variable climate. Our team will help you choose 
+                      Heat pumps work efficiently even in cold temperatures, making them
+                      ideal for Tasmania's variable climate. Our team will help you choose
                       the right system for your needs.
                     </p>
                     <Button onClick={scrollToContact} data-testid="button-heatpumps-cta">
@@ -214,7 +219,7 @@ export default function HeatPumpsService() {
 
         <Contact />
       </main>
-      
+
       <Footer />
     </div>
   );

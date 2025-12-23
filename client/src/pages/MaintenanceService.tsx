@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Settings, Shield, Wrench, Calendar, AlertTriangle, Phone } from "lucide-react";
 import { useLocation } from "wouter";
+import SEO from "../components/SEO";
 import maintenanceImage from "@assets/generated_images/Solar_panel_maintenance_service_cbd358e0.png";
 
 export default function MaintenanceService() {
@@ -36,7 +37,7 @@ export default function MaintenanceService() {
       price: "$199/year",
       features: [
         "Annual system inspection",
-        "Performance monitoring report", 
+        "Performance monitoring report",
         "Basic cleaning (ground level)",
         "Electrical connection check",
         "Priority booking for repairs"
@@ -45,7 +46,7 @@ export default function MaintenanceService() {
     },
     {
       name: "Complete Care",
-      price: "$399/year", 
+      price: "$399/year",
       features: [
         "Bi-annual system inspection",
         "Professional panel cleaning",
@@ -90,7 +91,7 @@ export default function MaintenanceService() {
     },
     {
       problem: "Storm Damage",
-      causes: "Panel damage, mounting issues, electrical damage", 
+      causes: "Panel damage, mounting issues, electrical damage",
       solution: "Damage assessment, insurance liaison, system restoration"
     }
   ];
@@ -104,16 +105,20 @@ export default function MaintenanceService() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Solar Maintenance & Repairs | Donnachy Electrical"
+        description="Keep your solar system performing at its best with our comprehensive maintenance, cleaning, and repair services."
+      />
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-gray-900 to-gray-800">
         <div className="absolute inset-0 bg-black/40"></div>
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${maintenanceImage})` }}
         ></div>
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <Button 
+            <Button
               variant="secondary"
               size="sm"
               className="mb-6"
@@ -122,7 +127,7 @@ export default function MaintenanceService() {
             >
               ← Back to Home
             </Button>
-            
+
             <div className="flex items-center gap-3 mb-4">
               <div className="bg-primary/20 backdrop-blur-sm p-3 rounded-lg">
                 <Settings size={32} className="text-white" />
@@ -133,22 +138,22 @@ export default function MaintenanceService() {
             <h1 className="font-heading font-extrabold text-4xl md:text-6xl text-white mb-6 leading-tight">
               Keep Your Solar System at Peak Performance
             </h1>
-            
+
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Protect your solar investment with our comprehensive maintenance and support services. 
+              Protect your solar investment with our comprehensive maintenance and support services.
               We keep your system running efficiently for years to come.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="text-lg px-8"
                 onClick={scrollToContact}
                 data-testid="button-maintenance-quote"
               >
                 Get Maintenance Quote
               </Button>
-              <Button 
+              <Button
                 variant="outline"
                 size="lg"
                 className="text-lg px-8 bg-white/10 text-white border-white/30 backdrop-blur-sm hover:bg-white/20"
@@ -243,14 +248,14 @@ export default function MaintenanceService() {
               <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-6">
                 Why Choose Our Maintenance?
               </h2>
-              
+
               <div className="space-y-4 mb-8">
                 {[
                   "15+ years of solar maintenance experience",
                   "CEC-accredited technicians and electricians",
                   "Comprehensive insurance and safety compliance",
                   "Same-day emergency response (when possible)",
-                  "Fixed-price annual maintenance contracts", 
+                  "Fixed-price annual maintenance contracts",
                   "Complete warranty management service",
                   "Performance monitoring and optimization",
                   "Detailed reporting after every service"
@@ -263,14 +268,14 @@ export default function MaintenanceService() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
+                <Button
                   size="lg"
                   onClick={scrollToContact}
                   data-testid="button-maintenance-benefits-quote"
                 >
                   Get Maintenance Quote
                 </Button>
-                <Button 
+                <Button
                   variant="outline"
                   size="lg"
                   onClick={() => navigate('/residential')}
@@ -325,7 +330,7 @@ export default function MaintenanceService() {
             Don't let poor maintenance reduce your solar returns. Keep your system running at peak performance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               size="lg"
               variant="secondary"
               className="text-lg px-8"
@@ -334,7 +339,7 @@ export default function MaintenanceService() {
             >
               Schedule Maintenance Today
             </Button>
-            <Button 
+            <Button
               size="lg"
               variant="outline"
               className="text-lg px-8 bg-white/10 text-white border-white/30 backdrop-blur-sm hover:bg-white/20"

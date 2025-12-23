@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Award, Users, MapPin, Phone, Mail } from "lucide-react";
 import { useLocation } from "wouter";
+import SEO from "../components/SEO";
 
 export default function About() {
   const [, navigate] = useLocation();
@@ -41,11 +42,15 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="About Us - Donnachy Electrical | Tasmania"
+        description="Learn about Donnachy Electrical, a Tasmanian owned and operated business with over 15 years of experience in solar, battery, and electrical solutions."
+      />
       {/* Hero Section */}
       <section className="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <Button 
+            <Button
               variant="secondary"
               size="sm"
               className="mb-6"
@@ -58,22 +63,22 @@ export default function About() {
             <h1 className="font-heading font-extrabold text-4xl md:text-6xl mb-6 leading-tight">
               About Donnachy Electrical
             </h1>
-            
+
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Since 2010, we've been helping Tasmanian homes and businesses harness clean, 
+              Since 2010, we've been helping Tasmanian homes and businesses harness clean,
               affordable solar energy with professional installation and ongoing support.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="text-lg px-8"
                 onClick={scrollToContact}
                 data-testid="button-about-quote"
               >
                 Get Your Free Quote
               </Button>
-              <Button 
+              <Button
                 variant="outline"
                 size="lg"
                 className="text-lg px-8 bg-white/10 text-white border-white/30 backdrop-blur-sm hover:bg-white/20"
@@ -95,42 +100,42 @@ export default function About() {
               <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-6">
                 Our Story
               </h2>
-              
+
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Donnachy Electrical was founded by Scott Donnachy as a traditional electrical 
-                  contracting business serving Tasmania. In 2010, we completed our first solar 
+                  Donnachy Electrical was founded by Scott Donnachy as a traditional electrical
+                  contracting business serving Tasmania. In 2010, we completed our first solar
                   installation, marking the beginning of our journey into renewable energy.
                 </p>
-                
+
                 <p>
-                  Since that first installation, we've focused exclusively on helping Tasmanians 
-                  harness solar energy. We've worked on residential and commercial projects across 
-                  the state, from Hobart to Devonport, always with the same commitment to quality 
+                  Since that first installation, we've focused exclusively on helping Tasmanians
+                  harness solar energy. We've worked on residential and commercial projects across
+                  the state, from Hobart to Devonport, always with the same commitment to quality
                   and customer care.
                 </p>
 
                 <p>
-                  Our approach is built on technical expertise, genuine customer relationships, 
-                  and an unwavering commitment to quality workmanship. We're CEC-accredited and 
+                  Our approach is built on technical expertise, genuine customer relationships,
+                  and an unwavering commitment to quality workmanship. We're CEC-accredited and
                   maintain high standards for both safety and performance on every project.
                 </p>
 
                 <p>
-                  As energy prices continue to rise, we remain dedicated to helping Tasmanians 
+                  As energy prices continue to rise, we remain dedicated to helping Tasmanians
                   achieve energy independence through solar power and battery storage solutions.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <Button 
+                <Button
                   size="lg"
                   onClick={() => navigate('/maintenance')}
                   data-testid="button-about-maintenance"
                 >
                   Maintenance Services
                 </Button>
-                <Button 
+                <Button
                   variant="outline"
                   size="lg"
                   onClick={() => navigate('/commercial')}
@@ -171,7 +176,7 @@ export default function About() {
                 <div className="space-y-3">
                   {[
                     "CEC Accredited Solar Designer",
-                    "CEC Accredited Solar Installer", 
+                    "CEC Accredited Solar Installer",
                     "Licensed Electrical Contractor (Tasmania)",
                     "Clean Energy Council Member",
                     "Fully Insured & Bonded"
@@ -230,25 +235,25 @@ export default function About() {
               <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-6">
                 Meet Scott Donnachy
               </h2>
-              
+
               <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
                 <p>
-                  As the founder and principal of Donnachy Electrical, Scott brings extensive 
-                  electrical contracting experience to every solar project. His journey into 
-                  renewable energy began with a personal interest in sustainability and grew into 
+                  As the founder and principal of Donnachy Electrical, Scott brings extensive
+                  electrical contracting experience to every solar project. His journey into
+                  renewable energy began with a personal interest in sustainability and grew into
                   a passion for helping others achieve energy independence.
                 </p>
-                
+
                 <p>
-                  Scott holds CEC accreditation as both a solar designer and installer, ensuring 
-                  every system is expertly designed and professionally installed. He personally 
-                  oversees all projects and is committed to delivering quality results for 
+                  Scott holds CEC accreditation as both a solar designer and installer, ensuring
+                  every system is expertly designed and professionally installed. He personally
+                  oversees all projects and is committed to delivering quality results for
                   every customer.
                 </p>
 
                 <p>
-                  When he's not designing solar solutions, Scott enjoys exploring Tasmania's 
-                  natural beauty with his family and staying current with the latest developments 
+                  When he's not designing solar solutions, Scott enjoys exploring Tasmania's
+                  natural beauty with his family and staying current with the latest developments
                   in renewable energy technology.
                 </p>
               </div>
@@ -275,7 +280,7 @@ export default function About() {
                 </div>
                 <h3 className="font-heading font-bold text-xl mb-2">Scott Donnachy</h3>
                 <p className="text-muted-foreground mb-4">Founder & Principal Electrician</p>
-                
+
                 <div className="space-y-2 text-left">
                   <div className="flex items-center gap-2">
                     <Phone size={16} className="text-primary" />
@@ -306,7 +311,7 @@ export default function About() {
             Let us help you become part of Tasmania's clean energy future. Get started with a free consultation today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               size="lg"
               variant="secondary"
               className="text-lg px-8"
@@ -315,7 +320,7 @@ export default function About() {
             >
               Get Your Free Quote
             </Button>
-            <Button 
+            <Button
               size="lg"
               variant="outline"
               className="text-lg px-8 bg-white/10 text-white border-white/30 backdrop-blur-sm hover:bg-white/20"

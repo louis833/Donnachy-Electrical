@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Home, Battery, Shield, DollarSign, Phone } from "lucide-react";
 import { useLocation } from "wouter";
+import SEO from "../components/SEO";
 import residentialImage from "@assets/generated_images/Residential_home_with_solar_panels_50e3ea30.png";
 
 export default function ResidentialService() {
@@ -37,7 +38,7 @@ export default function ResidentialService() {
       description: "We'll visit your property to assess roof condition, shading, and energy needs."
     },
     {
-      step: "2", 
+      step: "2",
       title: "Custom System Design",
       description: "Our CEC-accredited designers create a system optimized for your home and budget."
     },
@@ -62,16 +63,20 @@ export default function ResidentialService() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Residential Electrical & Solar | Donnachy Electrical"
+        description="Complete home energy solutions including solar, batteries, heating, and quality electrical work for Tasmanian homes."
+      />
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-gray-900 to-gray-800">
         <div className="absolute inset-0 bg-black/40"></div>
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${residentialImage})` }}
         ></div>
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <Button 
+            <Button
               variant="secondary"
               size="sm"
               className="mb-6"
@@ -80,7 +85,7 @@ export default function ResidentialService() {
             >
               ← Back to Home
             </Button>
-            
+
             <div className="flex items-center gap-3 mb-4">
               <div className="bg-primary/20 backdrop-blur-sm p-3 rounded-lg">
                 <Home size={32} className="text-white" />
@@ -91,22 +96,22 @@ export default function ResidentialService() {
             <h1 className="font-heading font-extrabold text-4xl md:text-6xl text-white mb-6 leading-tight">
               Solar Power for Your Home
             </h1>
-            
+
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Transform your home into a clean energy powerhouse with our premium residential solar installations. 
+              Transform your home into a clean energy powerhouse with our premium residential solar installations.
               Save money, increase property value, and reduce your carbon footprint.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="text-lg px-8"
                 onClick={scrollToContact}
                 data-testid="button-residential-quote"
               >
                 Get Free Quote
               </Button>
-              <Button 
+              <Button
                 variant="outline"
                 size="lg"
                 className="text-lg px-8 bg-white/10 text-white border-white/30 backdrop-blur-sm hover:bg-white/20"
@@ -194,11 +199,11 @@ export default function ResidentialService() {
               <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-6">
                 Residential Solar Benefits
               </h2>
-              
+
               <div className="space-y-4 mb-8">
                 {[
                   "Reduce electricity bills by up to 90%",
-                  "Increase property value", 
+                  "Increase property value",
                   "Government rebates and feed-in tariffs available",
                   "25-year warranty on premium panels",
                   "Professional monitoring and maintenance support",
@@ -212,14 +217,14 @@ export default function ResidentialService() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
+                <Button
                   size="lg"
                   onClick={scrollToContact}
                   data-testid="button-residential-benefits-quote"
                 >
                   Get Your Free Quote
                 </Button>
-                <Button 
+                <Button
                   variant="outline"
                   size="lg"
                   onClick={() => navigate('/financing')}
@@ -256,7 +261,7 @@ export default function ResidentialService() {
                       <span>4-5 years</span>
                     </div>
                     <div className="border-t pt-4">
-                      <Button 
+                      <Button
                         className="w-full text-lg font-bold"
                         size="lg"
                         onClick={scrollToContact}
@@ -285,7 +290,7 @@ export default function ResidentialService() {
           <p className="text-xl text-white/90 mb-8">
             Join our many satisfied customers who have made the switch to clean, affordable solar energy.
           </p>
-          <Button 
+          <Button
             size="lg"
             variant="secondary"
             className="text-lg px-8"

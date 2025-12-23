@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, CreditCard, Calculator, TrendingUp, DollarSign, Phone, FileText, Zap } from "lucide-react";
 import { useLocation } from "wouter";
+import SEO from "../components/SEO";
 import { useState } from "react";
 import financeImage from "@assets/generated_images/Solar_financing_consultation_eb868e8d.png";
 import brighteLogoImage from "@assets/brighte_official_logo.png";
@@ -79,7 +80,7 @@ export default function FinancingService() {
     },
     {
       scenario: "Retirees",
-      systemSize: "5kW System", 
+      systemSize: "5kW System",
       totalCost: "Get a quote today",
       afterRebate: "Get a quote today",
       monthlyPayment: "Get a quote today",
@@ -106,16 +107,20 @@ export default function FinancingService() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Solar Financing Options | Donnachy Electrical"
+        description="Make solar affordable with our flexible financing options. $0 upfront payment plans available for solar and battery systems."
+      />
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-gray-900 to-gray-800">
         <div className="absolute inset-0 bg-black/40"></div>
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${financeImage})` }}
         ></div>
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <Button 
+            <Button
               variant="secondary"
               size="sm"
               className="mb-6"
@@ -124,7 +129,7 @@ export default function FinancingService() {
             >
               ← Back to Home
             </Button>
-            
+
             <div className="flex items-center gap-3 mb-4">
               <div className="bg-primary/20 backdrop-blur-sm p-3 rounded-lg">
                 <CreditCard size={32} className="text-white" />
@@ -135,21 +140,21 @@ export default function FinancingService() {
             <h1 className="font-heading font-extrabold text-4xl md:text-6xl text-white mb-6 leading-tight">
               Make Solar Affordable Today
             </h1>
-            
+
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Don't let upfront costs prevent you from going solar. Explore flexible financing options 
+              Don't let upfront costs prevent you from going solar. Explore flexible financing options
               and government rebates that make clean energy accessible for everyone.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
+              <Button
                 size="lg"
                 onClick={scrollToContact}
                 data-testid="button-financing-quote"
               >
                 Get Financing Quote
               </Button>
-              <Button 
+              <Button
                 variant="outline"
                 size="lg"
                 className="bg-white/10 text-white border-white/30 backdrop-blur-sm"
@@ -202,9 +207,9 @@ export default function FinancingService() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="mb-8">
-              <img 
-                src={brighteLogoImage} 
-                alt="Brighte - Australia's leader in solar finance" 
+              <img
+                src={brighteLogoImage}
+                alt="Brighte - Australia's leader in solar finance"
                 className="h-12 mx-auto mb-4"
                 data-testid="img-brighte-logo"
               />
@@ -213,7 +218,7 @@ export default function FinancingService() {
               Australia's Leader in Solar Finance
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              With Brighte's network of over 2,900+ tradies, and working with Government, we're helping 
+              With Brighte's network of over 2,900+ tradies, and working with Government, we're helping
               make sustainability affordable and accessible for everyone through our partnership with Brighte.
             </p>
           </div>
@@ -370,11 +375,10 @@ export default function FinancingService() {
                         <button
                           key={system.size}
                           onClick={() => setSelectedSystemSize(system.size)}
-                          className={`p-3 rounded-lg border text-left transition-colors ${
-                            selectedSystemSize === system.size
-                              ? 'border-primary bg-primary/5 text-primary'
-                              : 'border-gray-200 hover:border-primary/50'
-                          }`}
+                          className={`p-3 rounded-lg border text-left transition-colors ${selectedSystemSize === system.size
+                            ? 'border-primary bg-primary/5 text-primary'
+                            : 'border-gray-200 hover:border-primary/50'
+                            }`}
                           data-testid={`button-system-${system.size}`}
                         >
                           <div className="flex justify-between items-center">
@@ -426,11 +430,10 @@ export default function FinancingService() {
                         <button
                           key={battery.size}
                           onClick={() => setSelectedBatterySize(battery.size)}
-                          className={`p-3 rounded-lg border text-left transition-colors ${
-                            selectedBatterySize === battery.size
-                              ? 'border-primary bg-primary/5 text-primary'
-                              : 'border-gray-200 hover:border-primary/50'
-                          }`}
+                          className={`p-3 rounded-lg border text-left transition-colors ${selectedBatterySize === battery.size
+                            ? 'border-primary bg-primary/5 text-primary'
+                            : 'border-gray-200 hover:border-primary/50'
+                            }`}
                           data-testid={`button-battery-${battery.size}`}
                         >
                           <div className="flex justify-between items-center">
@@ -488,7 +491,7 @@ export default function FinancingService() {
                   <div className="border-l border-primary/30 pl-4">
                     <div className="text-lg font-semibold text-black">Total Savings</div>
                     <div className="text-3xl font-extrabold text-primary" data-testid="text-total-rebates">
-                      ${((systemSizes.find(s => s.size === selectedSystemSize)?.rebate || 0) + 
+                      ${((systemSizes.find(s => s.size === selectedSystemSize)?.rebate || 0) +
                         (batterySizes.find(b => b.size === selectedBatterySize)?.rebate || 0)).toLocaleString()}
                     </div>
                   </div>
@@ -551,7 +554,7 @@ export default function FinancingService() {
           </div>
 
           <div className="text-center">
-            <Button 
+            <Button
               size="lg"
               asChild
               data-testid="button-brighte-faq"
@@ -563,7 +566,7 @@ export default function FinancingService() {
             <p className="text-muted-foreground mt-8 mb-6">
               Still have questions about solar financing?
             </p>
-            <Button 
+            <Button
               size="lg"
               variant="outline"
               onClick={scrollToContact}
@@ -586,7 +589,7 @@ export default function FinancingService() {
             Don't wait for energy prices to rise further. Take advantage of current rebates and low interest rates.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               size="lg"
               variant="secondary"
               onClick={scrollToContact}
@@ -594,7 +597,7 @@ export default function FinancingService() {
             >
               Get Pre-Approved Today
             </Button>
-            <Button 
+            <Button
               size="lg"
               variant="outline"
               className="bg-white/10 text-white border-white/30 backdrop-blur-sm"

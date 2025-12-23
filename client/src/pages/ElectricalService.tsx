@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Zap, Shield, Wrench, CheckCircle, Home, Building, ArrowLeft } from "lucide-react";
 import { useLocation } from "wouter";
+import SEO from "../components/SEO";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 import { usePageTracking } from "@/hooks/usePageTracking";
 
@@ -51,15 +52,19 @@ export default function ElectricalService() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-white">
+      <SEO
+        title="General Electrical Services | Donnachy Electrical"
+        description="Professional electrical services for homes and businesses. Rewiring, switchboards, lighting, and more by licensed Tasmanian electricians."
+      />
       <Header />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               className="text-white/80 mb-6"
               onClick={() => navigate('/')}
               data-testid="button-back-home"
@@ -67,7 +72,7 @@ export default function ElectricalService() {
               <ArrowLeft size={16} className="mr-2" />
               Back to Home
             </Button>
-            
+
             <ScrollReveal direction="up">
               <div className="flex items-center gap-3 mb-4">
                 <div className="bg-primary p-3 rounded-lg">
@@ -77,18 +82,18 @@ export default function ElectricalService() {
                   Licensed Electrician
                 </Badge>
               </div>
-              
+
               <h1 className="font-heading font-extrabold text-4xl md:text-5xl mb-6">
                 General Electrical Services
               </h1>
-              
+
               <p className="text-xl text-white/80 max-w-2xl mb-8">
-                From simple repairs to complete electrical installations, we provide safe, 
+                From simple repairs to complete electrical installations, we provide safe,
                 reliable electrical services for homes and businesses across Tasmania.
               </p>
-              
-              <Button 
-                size="lg" 
+
+              <Button
+                size="lg"
                 onClick={scrollToContact}
                 data-testid="button-electrical-quote"
               >
@@ -171,7 +176,7 @@ export default function ElectricalService() {
 
         <Contact />
       </main>
-      
+
       <Footer />
     </div>
   );

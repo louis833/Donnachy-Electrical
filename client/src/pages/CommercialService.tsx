@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Building, Zap, TrendingUp, Users, Phone } from "lucide-react";
 import { useLocation } from "wouter";
+import SEO from "../components/SEO";
 import commercialImage from "@assets/generated_images/Commercial_building_solar_installation_7799d776.png";
 
 export default function CommercialService() {
@@ -66,16 +67,20 @@ export default function CommercialService() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO
+        title="Commercial Solar Solutions | Donnachy Electrical"
+        description="Reduce operating costs with expert commercial solar installations. Custom designed systems for Tasmanian businesses of all sizes."
+      />
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-gray-900 to-gray-800">
         <div className="absolute inset-0 bg-black/40"></div>
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${commercialImage})` }}
         ></div>
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
-            <Button 
+            <Button
               variant="secondary"
               size="sm"
               className="mb-6"
@@ -84,7 +89,7 @@ export default function CommercialService() {
             >
               ← Back to Home
             </Button>
-            
+
             <div className="flex items-center gap-3 mb-4">
               <div className="bg-primary/20 backdrop-blur-sm p-3 rounded-lg">
                 <Building size={32} className="text-white" />
@@ -95,22 +100,22 @@ export default function CommercialService() {
             <h1 className="font-heading font-extrabold text-4xl md:text-6xl text-white mb-6 leading-tight">
               Solar Solutions for Business
             </h1>
-            
+
             <p className="text-xl text-white/90 mb-8 leading-relaxed">
-              Reduce operating costs, improve cash flow, and demonstrate environmental leadership with 
+              Reduce operating costs, improve cash flow, and demonstrate environmental leadership with
               commercial solar systems designed for Tasmanian businesses.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="text-lg px-8"
                 onClick={scrollToContact}
                 data-testid="button-commercial-quote"
               >
                 Get Business Quote
               </Button>
-              <Button 
+              <Button
                 variant="outline"
                 size="lg"
                 className="text-lg px-8 bg-white/10 text-white border-white/30 backdrop-blur-sm hover:bg-white/20"
@@ -198,12 +203,12 @@ export default function CommercialService() {
               <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-black mb-6">
                 Commercial Solar Benefits
               </h2>
-              
+
               <div className="space-y-4 mb-8">
                 {[
                   "Reduce electricity costs by 50-80%",
                   "Lock in energy prices for 25+ years",
-                  "Immediate tax benefits and depreciation", 
+                  "Immediate tax benefits and depreciation",
                   "Improve corporate sustainability credentials",
                   "Increase property value and market appeal",
                   "Generate additional revenue via feed-in tariffs"
@@ -216,14 +221,14 @@ export default function CommercialService() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
+                <Button
                   size="lg"
                   onClick={scrollToContact}
                   data-testid="button-commercial-benefits-quote"
                 >
                   Request ROI Analysis
                 </Button>
-                <Button 
+                <Button
                   variant="outline"
                   size="lg"
                   onClick={() => navigate('/maintenance')}
@@ -260,7 +265,7 @@ export default function CommercialService() {
                       <span>3-4 years</span>
                     </div>
                     <div className="border-t pt-4">
-                      <Button 
+                      <Button
                         className="w-full text-lg font-bold"
                         size="lg"
                         onClick={scrollToContact}
@@ -299,7 +304,7 @@ export default function CommercialService() {
                 steps: ["Site assessment & energy audit", "Custom system design", "Permits & approvals", "Financing arrangement"]
               },
               {
-                phase: "Installation", 
+                phase: "Installation",
                 steps: ["Project scheduling", "Professional installation", "Grid connection", "System commissioning"]
               },
               {
@@ -342,7 +347,7 @@ export default function CommercialService() {
             Join forward-thinking Tasmanian businesses that are reducing costs and improving sustainability with commercial solar.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               size="lg"
               variant="secondary"
               className="text-lg px-8"
@@ -351,7 +356,7 @@ export default function CommercialService() {
             >
               Schedule Site Assessment
             </Button>
-            <Button 
+            <Button
               size="lg"
               variant="outline"
               className="text-lg px-8 bg-white/10 text-white border-white/30 backdrop-blur-sm hover:bg-white/20"

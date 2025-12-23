@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sun, Battery, Home, Building, Wrench, Monitor, CheckCircle, ArrowLeft } from "lucide-react";
 import { useLocation } from "wouter";
+import SEO from "../components/SEO";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 import { usePageTracking } from "@/hooks/usePageTracking";
 
@@ -58,14 +59,18 @@ export default function SolarService() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Residential Solar & Battery | Donnachy Electrical"
+        description="Save on energy bills with premium home solar and battery packages. CEC accredited design and installation across Tasmania."
+      />
       <Header />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-amber-600 to-orange-700 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               className="text-white/80 mb-6"
               onClick={() => navigate('/')}
               data-testid="button-back-home"
@@ -73,7 +78,7 @@ export default function SolarService() {
               <ArrowLeft size={16} className="mr-2" />
               Back to Home
             </Button>
-            
+
             <ScrollReveal direction="up">
               <div className="flex items-center gap-3 mb-4">
                 <div className="bg-white/20 p-3 rounded-lg">
@@ -83,18 +88,18 @@ export default function SolarService() {
                   CEC Accredited Installer & Designer
                 </Badge>
               </div>
-              
+
               <h1 className="font-heading font-extrabold text-4xl md:text-5xl mb-6">
                 Solar & Battery Solutions
               </h1>
-              
+
               <p className="text-xl text-white/90 max-w-2xl mb-8">
-                Harness Tasmania's renewable energy with our expert solar panel and 
+                Harness Tasmania's renewable energy with our expert solar panel and
                 battery storage installations. Save money and reduce your carbon footprint.
               </p>
-              
-              <Button 
-                size="lg" 
+
+              <Button
+                size="lg"
                 className="bg-white text-orange-700 hover:bg-white/90"
                 onClick={scrollToContact}
                 data-testid="button-solar-quote"
@@ -191,7 +196,7 @@ export default function SolarService() {
                   ))}
                 </div>
               </ScrollReveal>
-              
+
               <ScrollReveal direction="right">
                 <Card className="bg-amber-50 border-amber-100">
                   <CardContent className="p-8">
@@ -199,8 +204,8 @@ export default function SolarService() {
                       Ready to Start Saving?
                     </h3>
                     <p className="text-muted-foreground mb-6">
-                      Get a free, no-obligation quote for your home or business. 
-                      We'll assess your energy needs and design the perfect system 
+                      Get a free, no-obligation quote for your home or business.
+                      We'll assess your energy needs and design the perfect system
                       to maximize your savings.
                     </p>
                     <Button onClick={scrollToContact} data-testid="button-solar-cta">
@@ -215,7 +220,7 @@ export default function SolarService() {
 
         <Contact />
       </main>
-      
+
       <Footer />
     </div>
   );

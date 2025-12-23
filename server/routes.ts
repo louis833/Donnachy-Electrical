@@ -90,6 +90,46 @@ export async function registerRoutes(app: Express): Promise<Server> {
     });
   });
 
+  // Sitemap
+  app.get("/sitemap.xml", (req, res) => {
+    const baseUrl = "https://donnachyelectrical.com.au";
+    const routes = [
+      "/",
+      "/about",
+      "/electrical",
+      "/heat-pumps",
+      "/solar",
+      "/commercial",
+      "/financing",
+      "/maintenance",
+      "/residential"
+    ];
+
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  ${routes.map(route => `
+  <url>
+    <loc>${baseUrl}${route}</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>${route === '/' ? '1.0' : '0.8'}</priority>
+  </url>
+  `).join("")}
+</urlset>`;
+
+    res.header("Content-Type", "application/xml");
+    res.send(sitemap);
+  });
+
+  // Robots.txt
+  app.get("/robots.txt", (req, res) => {
+    const robots = `User-agent: *
+Allow: /
+Sitemap: https://donnachyelectrical.com.au/sitemap.xml`;
+    res.header("Content-Type", "text/plain");
+    res.send(robots);
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;
